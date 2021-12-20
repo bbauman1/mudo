@@ -1,0 +1,678 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A834CBFF2770E70300596EF8 /* mudoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A834CBFE2770E70300596EF8 /* mudoApp.swift */; };
+		A834CC012770E70300596EF8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A834CC002770E70300596EF8 /* ContentView.swift */; };
+		A834CC032770E70A00596EF8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A834CC022770E70A00596EF8 /* Assets.xcassets */; };
+		A834CC062770E70B00596EF8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A834CC052770E70B00596EF8 /* Preview Assets.xcassets */; };
+		A834CC102770E70C00596EF8 /* mudoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A834CC0F2770E70C00596EF8 /* mudoTests.swift */; };
+		A834CC1A2770E70C00596EF8 /* mudoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A834CC192770E70C00596EF8 /* mudoUITests.swift */; };
+		A834CC1C2770E70C00596EF8 /* mudoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A834CC1B2770E70C00596EF8 /* mudoUITestsLaunchTests.swift */; };
+		A834CC292770EB3000596EF8 /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A834CC282770EB3000596EF8 /* TodayView.swift */; };
+		A834CC2B2770EFD700596EF8 /* Mood.swift in Sources */ = {isa = PBXBuildFile; fileRef = A834CC2A2770EFD700596EF8 /* Mood.swift */; };
+		A834CC2D2770EFEC00596EF8 /* TodayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A834CC2C2770EFEC00596EF8 /* TodayViewModel.swift */; };
+		A834CC342770F99600596EF8 /* MoodStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A834CC332770F99600596EF8 /* MoodStore.swift */; };
+		A834CC362770FA5900596EF8 /* LogEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = A834CC352770FA5900596EF8 /* LogEntry.swift */; };
+		A834CC382771012000596EF8 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A834CC372771012000596EF8 /* HistoryView.swift */; };
+		A834CC3A2771029D00596EF8 /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A834CC392771029D00596EF8 /* HistoryViewModel.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A834CC0C2770E70C00596EF8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A834CBF32770E70300596EF8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A834CBFA2770E70300596EF8;
+			remoteInfo = mudo;
+		};
+		A834CC162770E70C00596EF8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A834CBF32770E70300596EF8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A834CBFA2770E70300596EF8;
+			remoteInfo = mudo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A834CBFB2770E70300596EF8 /* mudo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mudo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A834CBFE2770E70300596EF8 /* mudoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mudoApp.swift; sourceTree = "<group>"; };
+		A834CC002770E70300596EF8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A834CC022770E70A00596EF8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A834CC052770E70B00596EF8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A834CC0B2770E70C00596EF8 /* mudoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mudoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A834CC0F2770E70C00596EF8 /* mudoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mudoTests.swift; sourceTree = "<group>"; };
+		A834CC152770E70C00596EF8 /* mudoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mudoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A834CC192770E70C00596EF8 /* mudoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mudoUITests.swift; sourceTree = "<group>"; };
+		A834CC1B2770E70C00596EF8 /* mudoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mudoUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A834CC282770EB3000596EF8 /* TodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayView.swift; sourceTree = "<group>"; };
+		A834CC2A2770EFD700596EF8 /* Mood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mood.swift; sourceTree = "<group>"; };
+		A834CC2C2770EFEC00596EF8 /* TodayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewModel.swift; sourceTree = "<group>"; };
+		A834CC332770F99600596EF8 /* MoodStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodStore.swift; sourceTree = "<group>"; };
+		A834CC352770FA5900596EF8 /* LogEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogEntry.swift; sourceTree = "<group>"; };
+		A834CC372771012000596EF8 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		A834CC392771029D00596EF8 /* HistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A834CBF82770E70300596EF8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A834CC082770E70C00596EF8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A834CC122770E70C00596EF8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A834CBF22770E70300596EF8 = {
+			isa = PBXGroup;
+			children = (
+				A834CBFD2770E70300596EF8 /* mudo */,
+				A834CC0E2770E70C00596EF8 /* mudoTests */,
+				A834CC182770E70C00596EF8 /* mudoUITests */,
+				A834CBFC2770E70300596EF8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A834CBFC2770E70300596EF8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A834CBFB2770E70300596EF8 /* mudo.app */,
+				A834CC0B2770E70C00596EF8 /* mudoTests.xctest */,
+				A834CC152770E70C00596EF8 /* mudoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A834CBFD2770E70300596EF8 /* mudo */ = {
+			isa = PBXGroup;
+			children = (
+				A834CC322770F98300596EF8 /* Stores */,
+				A834CC312770F97E00596EF8 /* Models */,
+				A834CC2E2770F95800596EF8 /* Features */,
+				A834CBFE2770E70300596EF8 /* mudoApp.swift */,
+				A834CC002770E70300596EF8 /* ContentView.swift */,
+				A834CC022770E70A00596EF8 /* Assets.xcassets */,
+				A834CC042770E70B00596EF8 /* Preview Content */,
+			);
+			path = mudo;
+			sourceTree = "<group>";
+		};
+		A834CC042770E70B00596EF8 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				A834CC052770E70B00596EF8 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		A834CC0E2770E70C00596EF8 /* mudoTests */ = {
+			isa = PBXGroup;
+			children = (
+				A834CC0F2770E70C00596EF8 /* mudoTests.swift */,
+			);
+			path = mudoTests;
+			sourceTree = "<group>";
+		};
+		A834CC182770E70C00596EF8 /* mudoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				A834CC192770E70C00596EF8 /* mudoUITests.swift */,
+				A834CC1B2770E70C00596EF8 /* mudoUITestsLaunchTests.swift */,
+			);
+			path = mudoUITests;
+			sourceTree = "<group>";
+		};
+		A834CC2E2770F95800596EF8 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				A834CC302770F96A00596EF8 /* History */,
+				A834CC2F2770F95E00596EF8 /* Today */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		A834CC2F2770F95E00596EF8 /* Today */ = {
+			isa = PBXGroup;
+			children = (
+				A834CC282770EB3000596EF8 /* TodayView.swift */,
+				A834CC2C2770EFEC00596EF8 /* TodayViewModel.swift */,
+			);
+			path = Today;
+			sourceTree = "<group>";
+		};
+		A834CC302770F96A00596EF8 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				A834CC372771012000596EF8 /* HistoryView.swift */,
+				A834CC392771029D00596EF8 /* HistoryViewModel.swift */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		A834CC312770F97E00596EF8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A834CC2A2770EFD700596EF8 /* Mood.swift */,
+				A834CC352770FA5900596EF8 /* LogEntry.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A834CC322770F98300596EF8 /* Stores */ = {
+			isa = PBXGroup;
+			children = (
+				A834CC332770F99600596EF8 /* MoodStore.swift */,
+			);
+			path = Stores;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A834CBFA2770E70300596EF8 /* mudo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A834CC1F2770E70C00596EF8 /* Build configuration list for PBXNativeTarget "mudo" */;
+			buildPhases = (
+				A834CBF72770E70300596EF8 /* Sources */,
+				A834CBF82770E70300596EF8 /* Frameworks */,
+				A834CBF92770E70300596EF8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = mudo;
+			productName = mudo;
+			productReference = A834CBFB2770E70300596EF8 /* mudo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A834CC0A2770E70C00596EF8 /* mudoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A834CC222770E70C00596EF8 /* Build configuration list for PBXNativeTarget "mudoTests" */;
+			buildPhases = (
+				A834CC072770E70C00596EF8 /* Sources */,
+				A834CC082770E70C00596EF8 /* Frameworks */,
+				A834CC092770E70C00596EF8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A834CC0D2770E70C00596EF8 /* PBXTargetDependency */,
+			);
+			name = mudoTests;
+			productName = mudoTests;
+			productReference = A834CC0B2770E70C00596EF8 /* mudoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A834CC142770E70C00596EF8 /* mudoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A834CC252770E70C00596EF8 /* Build configuration list for PBXNativeTarget "mudoUITests" */;
+			buildPhases = (
+				A834CC112770E70C00596EF8 /* Sources */,
+				A834CC122770E70C00596EF8 /* Frameworks */,
+				A834CC132770E70C00596EF8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A834CC172770E70C00596EF8 /* PBXTargetDependency */,
+			);
+			name = mudoUITests;
+			productName = mudoUITests;
+			productReference = A834CC152770E70C00596EF8 /* mudoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A834CBF32770E70300596EF8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1310;
+				LastUpgradeCheck = 1310;
+				TargetAttributes = {
+					A834CBFA2770E70300596EF8 = {
+						CreatedOnToolsVersion = 13.1;
+					};
+					A834CC0A2770E70C00596EF8 = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = A834CBFA2770E70300596EF8;
+					};
+					A834CC142770E70C00596EF8 = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = A834CBFA2770E70300596EF8;
+					};
+				};
+			};
+			buildConfigurationList = A834CBF62770E70300596EF8 /* Build configuration list for PBXProject "mudo" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A834CBF22770E70300596EF8;
+			productRefGroup = A834CBFC2770E70300596EF8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A834CBFA2770E70300596EF8 /* mudo */,
+				A834CC0A2770E70C00596EF8 /* mudoTests */,
+				A834CC142770E70C00596EF8 /* mudoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A834CBF92770E70300596EF8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A834CC062770E70B00596EF8 /* Preview Assets.xcassets in Resources */,
+				A834CC032770E70A00596EF8 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A834CC092770E70C00596EF8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A834CC132770E70C00596EF8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A834CBF72770E70300596EF8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A834CC2B2770EFD700596EF8 /* Mood.swift in Sources */,
+				A834CC3A2771029D00596EF8 /* HistoryViewModel.swift in Sources */,
+				A834CC382771012000596EF8 /* HistoryView.swift in Sources */,
+				A834CC012770E70300596EF8 /* ContentView.swift in Sources */,
+				A834CC362770FA5900596EF8 /* LogEntry.swift in Sources */,
+				A834CC342770F99600596EF8 /* MoodStore.swift in Sources */,
+				A834CC2D2770EFEC00596EF8 /* TodayViewModel.swift in Sources */,
+				A834CC292770EB3000596EF8 /* TodayView.swift in Sources */,
+				A834CBFF2770E70300596EF8 /* mudoApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A834CC072770E70C00596EF8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A834CC102770E70C00596EF8 /* mudoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A834CC112770E70C00596EF8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A834CC1A2770E70C00596EF8 /* mudoUITests.swift in Sources */,
+				A834CC1C2770E70C00596EF8 /* mudoUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A834CC0D2770E70C00596EF8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A834CBFA2770E70300596EF8 /* mudo */;
+			targetProxy = A834CC0C2770E70C00596EF8 /* PBXContainerItemProxy */;
+		};
+		A834CC172770E70C00596EF8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A834CBFA2770E70300596EF8 /* mudo */;
+			targetProxy = A834CC162770E70C00596EF8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		A834CC1D2770E70C00596EF8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A834CC1E2770E70C00596EF8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A834CC202770E70C00596EF8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"mudo/Preview Content\"";
+				DEVELOPMENT_TEAM = Y9ZLF8R6XZ;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = brettbauman.mudo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A834CC212770E70C00596EF8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"mudo/Preview Content\"";
+				DEVELOPMENT_TEAM = Y9ZLF8R6XZ;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = brettbauman.mudo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		A834CC232770E70C00596EF8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Y9ZLF8R6XZ;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = brettbauman.mudoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/mudo.app/mudo";
+			};
+			name = Debug;
+		};
+		A834CC242770E70C00596EF8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Y9ZLF8R6XZ;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = brettbauman.mudoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/mudo.app/mudo";
+			};
+			name = Release;
+		};
+		A834CC262770E70C00596EF8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Y9ZLF8R6XZ;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = brettbauman.mudoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = mudo;
+			};
+			name = Debug;
+		};
+		A834CC272770E70C00596EF8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Y9ZLF8R6XZ;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = brettbauman.mudoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = mudo;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A834CBF62770E70300596EF8 /* Build configuration list for PBXProject "mudo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A834CC1D2770E70C00596EF8 /* Debug */,
+				A834CC1E2770E70C00596EF8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A834CC1F2770E70C00596EF8 /* Build configuration list for PBXNativeTarget "mudo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A834CC202770E70C00596EF8 /* Debug */,
+				A834CC212770E70C00596EF8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A834CC222770E70C00596EF8 /* Build configuration list for PBXNativeTarget "mudoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A834CC232770E70C00596EF8 /* Debug */,
+				A834CC242770E70C00596EF8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A834CC252770E70C00596EF8 /* Build configuration list for PBXNativeTarget "mudoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A834CC262770E70C00596EF8 /* Debug */,
+				A834CC272770E70C00596EF8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A834CBF32770E70300596EF8 /* Project object */;
+}
