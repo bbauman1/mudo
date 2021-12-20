@@ -10,8 +10,27 @@ import SwiftUI
 struct TodayView: View {
 
     @ObservedObject var viewModel: TodayViewModel
+    @State var isSettingsPresented: Bool = false
     
     var body: some View {
+        NavigationView {
+            content
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Button {
+                            isSettingsPresented = true
+                        } label: {
+                            Image(systemName: "gear")
+                        }
+                    }
+                }
+                .sheet(isPresented: $isSettingsPresented) {
+                    SettingsView()
+                }
+        }
+    }
+    
+    @ViewBuilder var content: some View {
         if viewModel.shouldShowRecordView {
             recordView
         } else {

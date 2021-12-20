@@ -21,6 +21,7 @@
 		A834CC362770FA5900596EF8 /* LogEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = A834CC352770FA5900596EF8 /* LogEntry.swift */; };
 		A834CC382771012000596EF8 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A834CC372771012000596EF8 /* HistoryView.swift */; };
 		A834CC3A2771029D00596EF8 /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A834CC392771029D00596EF8 /* HistoryViewModel.swift */; };
+		A834CC3D277113D600596EF8 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A834CC3C277113D600596EF8 /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		A834CC352770FA5900596EF8 /* LogEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogEntry.swift; sourceTree = "<group>"; };
 		A834CC372771012000596EF8 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		A834CC392771029D00596EF8 /* HistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
+		A834CC3C277113D600596EF8 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +149,7 @@
 		A834CC2E2770F95800596EF8 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				A834CC3B277113C500596EF8 /* Settings */,
 				A834CC302770F96A00596EF8 /* History */,
 				A834CC2F2770F95E00596EF8 /* Today */,
 			);
@@ -186,6 +189,14 @@
 				A834CC332770F99600596EF8 /* MoodStore.swift */,
 			);
 			path = Stores;
+			sourceTree = "<group>";
+		};
+		A834CC3B277113C500596EF8 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				A834CC3C277113D600596EF8 /* SettingsView.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -323,6 +334,7 @@
 				A834CC382771012000596EF8 /* HistoryView.swift in Sources */,
 				A834CC012770E70300596EF8 /* ContentView.swift in Sources */,
 				A834CC362770FA5900596EF8 /* LogEntry.swift in Sources */,
+				A834CC3D277113D600596EF8 /* SettingsView.swift in Sources */,
 				A834CC342770F99600596EF8 /* MoodStore.swift in Sources */,
 				A834CC2D2770EFEC00596EF8 /* TodayViewModel.swift in Sources */,
 				A834CC292770EB3000596EF8 /* TodayView.swift in Sources */,

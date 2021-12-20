@@ -11,7 +11,7 @@ import Foundation
 class TodayViewModel: ObservableObject {
     
     @Published var mood: Mood?
-    @Published var shouldShowRecordView: Bool = false
+    @Published var shouldShowRecordView: Bool = true
     
     private let moodStore: MoodStore
     
