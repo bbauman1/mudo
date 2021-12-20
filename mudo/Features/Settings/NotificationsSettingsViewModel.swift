@@ -42,18 +42,19 @@ class NotificationsSettingsViewModel: ObservableObject {
         $notificationDate
             .sink { date in
                 UserDefaults.standard.notificationDate = date
-                self.scheduleRecurringNotifications() }
+                self.scheduleRecurringNotifications(for: date)
+            }
             .store(in: &cancellables)
     }
     
-    private func scheduleRecurringNotifications() {
+    private func scheduleRecurringNotifications(for date: Date = UserDefaults.standard.notificationDate) {
         cancelPendingNotifications()
         
         let content = UNMutableNotificationContent()
         content.title = "How ya feeling?"
         content.body = "Time to record your mood for the day"
         
-        let dateComponents = Calendar.current.dateComponents([.hour, .minute], from: notificationDate)
+        let dateComponents = Calendar.current.dateComponents([.hour, .minute], from: date)
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
         let request = UNNotificationRequest(identifier: notificationIdentifier, content: content, trigger: trigger)
         UNUserNotificationCenter.current().add(request) { error in
@@ -113,7 +114,7 @@ class NotificationsSettingsViewModel: ObservableObject {
     }
 }
 
-private extension UserDefaults {
+fileprivate extension UserDefaults {
     
     var isNotificationsToggleOn: Bool {
         get { bool(forKey: "notificationsToggle") }
