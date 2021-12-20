@@ -41,6 +41,9 @@ struct TodayView: View {
     var recordView: some View {
         VStack {
             Spacer()
+            Text("How are you feeling today?")
+                .font(.system(size: 24, weight: .semibold, design: .rounded))
+            Spacer()
             moodButtons
             Spacer()
             submitButton
@@ -52,7 +55,7 @@ struct TodayView: View {
         VStack(spacing: 24) {
             ForEach(Mood.allCases, id: \.displayName) { mood in
                 Button(mood.displayName) {
-                    viewModel.mood = mood
+                    viewModel.selectMood(mood)
                 }
                 .padding()
                 .overlay(

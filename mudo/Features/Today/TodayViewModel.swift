@@ -7,13 +7,16 @@
 
 import Combine
 import Foundation
+import UIKit
 
 class TodayViewModel: ObservableObject {
     
-    @Published var mood: Mood?
+    @Published private(set) var mood: Mood?
     @Published var shouldShowRecordView: Bool = true
     
     private let moodStore: MoodStore
+    
+    private let feedbackGenerator = UIImpactFeedbackGenerator()
     
     init(moodStore: MoodStore) {
         self.moodStore = moodStore
@@ -25,11 +28,18 @@ class TodayViewModel: ObservableObject {
     }
     
     func recordMood() {
-        guard let mood = mood else { return }        
+        guard let mood = mood else { return }
+        feedbackGenerator.impactOccurred(intensity: 0.75)
         moodStore.store(mood)
     }
     
+    func selectMood(_ mood: Mood) {
+        feedbackGenerator.impactOccurred(intensity: 0.75)
+        self.mood = mood
+    }
+    
     func undoTodaysEntry() {
+        feedbackGenerator.impactOccurred(intensity: 0.33)
         moodStore.undoTodaysEntry()
     }
 }
