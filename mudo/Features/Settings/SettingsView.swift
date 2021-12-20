@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct SettingsView: View {
-    
-    @State var date: Date = Date()
-    @State var isOn = false
+        
     @State var appColor = AppColor.blue
+    
+    @StateObject var notificationsViewModel = NotificationsSettingsViewModel()
     
     var body: some View {
         NavigationView {
@@ -25,9 +25,12 @@ struct SettingsView: View {
     
     var notificationsSection: some View {
         Section(header: Text("Notification settings")) {
-            Toggle("Enable daily reminder", isOn: $isOn)
-            if isOn {
-                DatePicker("Reminder time", selection: $date, displayedComponents: .hourAndMinute)
+            Toggle("Enable daily reminder", isOn: $notificationsViewModel.isNotificationsToggleOn)
+            if notificationsViewModel.isNotificationsToggleOn {
+                DatePicker(
+                    "Reminder time",
+                    selection: $notificationsViewModel.notificationDate,
+                    displayedComponents: .hourAndMinute)
             }
         }
     }
@@ -70,3 +73,4 @@ enum AppColor: String, CaseIterable {
         }
     }
 }
+
