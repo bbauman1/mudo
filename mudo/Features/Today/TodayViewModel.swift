@@ -13,6 +13,7 @@ class TodayViewModel: ObservableObject {
     
     @Published private(set) var mood: Mood?
     @Published var shouldShowRecordView: Bool = true
+    @Published var note: String = ""
     
     private let moodStore: MoodStore
     
@@ -41,5 +42,9 @@ class TodayViewModel: ObservableObject {
     func undoTodaysEntry() {
         feedbackGenerator.impactOccurred(intensity: 0.33)
         moodStore.undoTodaysEntry()
+    }
+    
+    func impactOccurred() {
+        feedbackGenerator.impactOccurred(intensity: 0.75)
     }
 }

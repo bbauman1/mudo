@@ -30,4 +30,27 @@ extension Mood {
             return "Irritable"
         }
     }
+    
+    var emoji: String {
+        switch self {
+        case .energized:
+            return "🥳"
+        case .relaxed:
+            return "😎"
+        case .empty:
+            return "😶"
+        case .anxious:
+            return "😰"
+        case .irritable:
+            return "😠"
+        }
+    }
+    
+    static var displayOrder: [[Mood]] {
+        [
+            [Mood.energized, .relaxed],
+            [Mood.anxious, .irritable],
+            [Mood.empty]
+        ]
+    }
 }
