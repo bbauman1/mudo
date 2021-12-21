@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ContentView: View {
     
+    @AppStorage("appColor") var appColor: AppColor = .default
+    
     let moodStore = MoodStore()
     
     var body: some View {
@@ -23,6 +25,8 @@ struct ContentView: View {
                     Label("History", systemImage: "line.3.horizontal")
                 }
         }
+        .accentColor(appColor.color)
+        .tint(appColor.color)
     }
 }
 

@@ -23,6 +23,7 @@
 		A834CC3A2771029D00596EF8 /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A834CC392771029D00596EF8 /* HistoryViewModel.swift */; };
 		A834CC3D277113D600596EF8 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A834CC3C277113D600596EF8 /* SettingsView.swift */; };
 		A834CC3F27713B8600596EF8 /* NotificationsSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A834CC3E27713B8600596EF8 /* NotificationsSettingsViewModel.swift */; };
+		A834CC412771681D00596EF8 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A834CC402771681D00596EF8 /* AppColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		A834CC392771029D00596EF8 /* HistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
 		A834CC3C277113D600596EF8 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		A834CC3E27713B8600596EF8 /* NotificationsSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsSettingsViewModel.swift; sourceTree = "<group>"; };
+		A834CC402771681D00596EF8 /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +183,7 @@
 			children = (
 				A834CC2A2770EFD700596EF8 /* Mood.swift */,
 				A834CC352770FA5900596EF8 /* LogEntry.swift */,
+				A834CC402771681D00596EF8 /* AppColor.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -337,6 +340,7 @@
 				A834CC382771012000596EF8 /* HistoryView.swift in Sources */,
 				A834CC012770E70300596EF8 /* ContentView.swift in Sources */,
 				A834CC362770FA5900596EF8 /* LogEntry.swift in Sources */,
+				A834CC412771681D00596EF8 /* AppColor.swift in Sources */,
 				A834CC3D277113D600596EF8 /* SettingsView.swift in Sources */,
 				A834CC342770F99600596EF8 /* MoodStore.swift in Sources */,
 				A834CC3F27713B8600596EF8 /* NotificationsSettingsViewModel.swift in Sources */,

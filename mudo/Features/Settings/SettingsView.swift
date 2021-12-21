@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct SettingsView: View {
-        
-    @State var appColor = AppColor.blue
+    
+    @AppStorage("appColor") var appColor: AppColor = .default
     
     @StateObject var notificationsViewModel = NotificationsSettingsViewModel()
     
@@ -53,24 +53,3 @@ struct SettingsView: View {
         }
     }
 }
-
-enum AppColor: String, CaseIterable {
-    case red
-    case green
-    case blue
-    case pink
-    
-    var color: Color {
-        switch self {
-        case .red:
-            return .red
-        case .green:
-            return .green
-        case .blue:
-            return .blue
-        case .pink:
-            return .pink
-        }
-    }
-}
-
