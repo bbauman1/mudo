@@ -31,7 +31,7 @@ class TodayViewModel: ObservableObject {
     func recordMood() {
         guard let mood = mood else { return }
         feedbackGenerator.impactOccurred(intensity: 0.75)
-        moodStore.store(mood)
+        moodStore.store(mood, note: note)
     }
     
     func selectMood(_ mood: Mood) {

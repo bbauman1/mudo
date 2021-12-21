@@ -25,11 +25,13 @@ extension HistoryViewModel {
     struct Entry: Identifiable {
         let id = UUID()
         let mood: Mood
-        let title: String
+        let dateString: String
+        let note: String
         
         init(from logEntry: LogEntry) {
             self.mood = logEntry.mood
-            self.title = logEntry.date.formatted(.dateTime)
+            self.dateString = logEntry.date.formatted(.dateTime)
+            self.note = logEntry.note
         }
     }
 }

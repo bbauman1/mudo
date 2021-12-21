@@ -36,11 +36,14 @@ struct HistoryView: View {
     var populatedView: some View {
         NavigationView {
             List(viewModel.history) { entry in
-                VStack(alignment: .leading) {
-                    Text(entry.mood.displayName)
-                        .font(.system(size: 16, weight: .semibold, design: .rounded))
-                    Text(entry.title)
-                        .font(.system(size: 16, weight: .regular, design: .rounded))
+                if !entry.note.isEmpty {
+                    NavigationLink {
+                        Text(entry.note)
+                    } label: {
+                        HistoryRow(entry: entry)
+                    }
+                } else {
+                    HistoryRow(entry: entry)
                 }
             }
             .navigationTitle("History")
@@ -48,4 +51,16 @@ struct HistoryView: View {
     }
 }
 
-
+struct HistoryRow: View {
+    
+    let entry: HistoryViewModel.Entry
+    
+    var body: some View {
+        VStack(alignment: .leading) {
+            Text(entry.mood.emoji + entry.mood.displayName)
+                .font(.system(size: 16, weight: .semibold, design: .rounded))
+            Text(entry.dateString)
+                .font(.system(size: 16, weight: .regular, design: .rounded))
+        }
+    }
+}

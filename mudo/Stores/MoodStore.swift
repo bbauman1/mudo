@@ -35,8 +35,8 @@ class MoodStore {
             .eraseToAnyPublisher()
     }
     
-    func store(_ mood: Mood) {
-        let entry = LogEntry(date: Date(), mood: mood)
+    func store(_ mood: Mood, note: String) {
+        let entry = LogEntry(date: Date(), mood: mood, note: note)
         var history = UserDefaults.standard.logHistory
         
         if let previousEntry = history.first, Calendar.current.isDateInToday(previousEntry.date) {

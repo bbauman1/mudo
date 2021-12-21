@@ -10,6 +10,7 @@ import Foundation
 struct LogEntry: Codable {
     let date: Date
     let mood: Mood
+    let note: String
 }
 
 typealias LogHistory = [LogEntry]
