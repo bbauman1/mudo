@@ -19,6 +19,19 @@ class TodayViewModel: ObservableObject {
     
     private let feedbackGenerator = UIImpactFeedbackGenerator()
     
+    var scrollToTop: AnyPublisher<Void, Never> {
+        Publishers.Merge(_scrollToTop, keyboardWillAppear)
+            .eraseToAnyPublisher()
+    }
+    
+    var keyboardWillAppear: AnyPublisher<Void, Never> {
+        NotificationCenter.default.publisher(for: UIApplication.keyboardWillShowNotification)
+            .map { _ in }
+            .eraseToAnyPublisher()
+    }
+    
+    private let _scrollToTop = PassthroughSubject<Void, Never>()
+    
     init(moodStore: MoodStore) {
         self.moodStore = moodStore
         
@@ -37,6 +50,7 @@ class TodayViewModel: ObservableObject {
     func selectMood(_ mood: Mood) {
         feedbackGenerator.impactOccurred(intensity: 0.75)
         self.mood = mood
+        _scrollToTop.send()
     }
     
     func undoTodaysEntry() {

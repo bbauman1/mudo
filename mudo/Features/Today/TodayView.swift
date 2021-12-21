@@ -54,7 +54,7 @@ struct TodayView: View {
                         scrollAnchor
                     }
                     .padding([.horizontal], 24)
-                    .onReceive(NotificationCenter.default.publisher(for: UIApplication.keyboardWillShowNotification)) { _ in
+                    .onReceive(viewModel.scrollToTop) { _ in
                         withAnimation {
                             proxy.scrollTo(scrollAnchorId)
                         }
