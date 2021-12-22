@@ -26,6 +26,7 @@
 		A834CC412771681D00596EF8 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A834CC402771681D00596EF8 /* AppColor.swift */; };
 		A834CC442772565A00596EF8 /* CircularGroupBoxStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A834CC432772565A00596EF8 /* CircularGroupBoxStyle.swift */; };
 		A834CC462772573500596EF8 /* CapsuleButtonSyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A834CC452772573500596EF8 /* CapsuleButtonSyle.swift */; };
+		A834CC492773C81300596EF8 /* Color+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = A834CC482773C81300596EF8 /* Color+Hex.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		A834CC402771681D00596EF8 /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
 		A834CC432772565A00596EF8 /* CircularGroupBoxStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularGroupBoxStyle.swift; sourceTree = "<group>"; };
 		A834CC452772573500596EF8 /* CapsuleButtonSyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleButtonSyle.swift; sourceTree = "<group>"; };
+		A834CC482773C81300596EF8 /* Color+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Hex.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 		A834CBFD2770E70300596EF8 /* mudo */ = {
 			isa = PBXGroup;
 			children = (
+				A834CC472773C80300596EF8 /* ViewExtensions */,
 				A834CC422772562C00596EF8 /* Styles */,
 				A834CC322770F98300596EF8 /* Stores */,
 				A834CC312770F97E00596EF8 /* Models */,
@@ -217,6 +220,14 @@
 				A834CC452772573500596EF8 /* CapsuleButtonSyle.swift */,
 			);
 			path = Styles;
+			sourceTree = "<group>";
+		};
+		A834CC472773C80300596EF8 /* ViewExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				A834CC482773C81300596EF8 /* Color+Hex.swift */,
+			);
+			path = ViewExtensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -354,6 +365,7 @@
 				A834CC382771012000596EF8 /* HistoryView.swift in Sources */,
 				A834CC012770E70300596EF8 /* ContentView.swift in Sources */,
 				A834CC362770FA5900596EF8 /* LogEntry.swift in Sources */,
+				A834CC492773C81300596EF8 /* Color+Hex.swift in Sources */,
 				A834CC412771681D00596EF8 /* AppColor.swift in Sources */,
 				A834CC3D277113D600596EF8 /* SettingsView.swift in Sources */,
 				A834CC342770F99600596EF8 /* MoodStore.swift in Sources */,

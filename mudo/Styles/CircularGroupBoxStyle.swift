@@ -10,8 +10,8 @@ import SwiftUI
 struct CircularGroupBoxStyle: GroupBoxStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.content
-            .padding(28)
-            .background(Color(.systemGroupedBackground))
+            .frame(width: 120, height: 120)
+            .background(Color(.secondarySystemBackground))
             .clipShape(Circle())
     }
 }

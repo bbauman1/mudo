@@ -66,7 +66,8 @@ struct TodayView: View {
     var moodButtons: some View {
         VStack {
             ForEach(Array(Mood.displayOrder.enumerated()), id: \.0) { index, moodRow in
-                HStack(spacing: 12) {
+                HStack {
+                    Spacer()
                     ForEach(moodRow, id: \.displayName) { mood in
                         Button {
                             viewModel.selectMood(mood)
@@ -79,8 +80,9 @@ struct TodayView: View {
                                 }
                             }
                             .groupBoxStyle(.circular)
-                        }
+                        }                        
                         .overlay(viewModel.mood == mood ? Circle().stroke(Color.accentColor, lineWidth: 3) : nil)
+                        Spacer()
                     }
                 }
             }
@@ -100,7 +102,7 @@ struct TodayView: View {
                     Text("Add a note")
                         .font(.system(size: 16, weight: .regular, design: .rounded))
                     Spacer()
-                    Image(systemName: "plus.circle.fill")
+                    Image(systemName: isNoteExpanded ? "minus.circle.fill" : "plus.circle.fill")
                 }
                 .padding()
             }
@@ -110,7 +112,7 @@ struct TodayView: View {
                     .padding(.horizontal)
                 TextField("Optional, but recommended", text: $viewModel.note)
                     .focused($isNoteFocused)
-                    .background(Color(.systemGroupedBackground))
+                    .background(Color(.secondarySystemBackground))
                     .padding()
                     .onAppear {
                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
@@ -119,7 +121,7 @@ struct TodayView: View {
                     }
             }
         }
-        .background(Color(.systemGroupedBackground))
+        .background(Color(.secondarySystemBackground))
         .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
     }
     
