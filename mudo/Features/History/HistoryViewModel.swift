@@ -30,7 +30,11 @@ extension HistoryViewModel {
         
         init(from logEntry: LogEntry) {
             self.mood = logEntry.mood
-            self.dateString = logEntry.date.formatted(.dateTime)
+            self.dateString = {
+                let date = logEntry.date.formatted(.dateTime.month(.wide).day(.defaultDigits))
+                let time = logEntry.date.formatted(.dateTime.hour(.defaultDigits(amPM: .abbreviated)).minute(.defaultDigits))
+                return date + " • " + time
+            }()
             self.note = logEntry.note
         }
     }

@@ -38,29 +38,15 @@ struct HistoryView: View {
             List(viewModel.history) { entry in
                 if !entry.note.isEmpty {
                     NavigationLink {
-                        Text(entry.note)
+                        HistoryDetailView(entry: entry)
                     } label: {
-                        HistoryRow(entry: entry)
+                        HistoryRowView(entry: entry)
                     }
                 } else {
-                    HistoryRow(entry: entry)
+                    HistoryRowView(entry: entry)
                 }
             }
             .navigationTitle("History")
-        }
-    }
-}
-
-struct HistoryRow: View {
-    
-    let entry: HistoryViewModel.Entry
-    
-    var body: some View {
-        VStack(alignment: .leading) {
-            Text(entry.mood.emoji + entry.mood.displayName)
-                .font(.system(size: 16, weight: .semibold, design: .rounded))
-            Text(entry.dateString)
-                .font(.system(size: 16, weight: .regular, design: .rounded))
         }
     }
 }

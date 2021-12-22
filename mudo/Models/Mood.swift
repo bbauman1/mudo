@@ -46,6 +46,10 @@ extension Mood {
         }
     }
     
+    var emojiWithName: String {
+        emoji + " " + displayName
+    }
+    
     static var displayOrder: [[Mood]] {
         [
             [Mood.energized, .relaxed],
