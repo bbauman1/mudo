@@ -7,13 +7,21 @@
 
 import Combine
 import Foundation
+import UIKit
 
 class MoodStore {
     
     var history: AnyPublisher<LogHistory, Never> {
         // todo: figure out how to get publisher working for custom type instead of data
-        UserDefaults.standard.publisher(for: \.logHistoryData)
+        let logHistory = UserDefaults.standard.publisher(for: \.logHistoryData)
             .map { _ in UserDefaults.standard.logHistory }
+            .eraseToAnyPublisher()
+        
+        let appWillForeground = NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)
+            .map { _ in UserDefaults.standard.logHistory }
+            .eraseToAnyPublisher()
+        
+        return Publishers.Merge(logHistory, appWillForeground)
             .eraseToAnyPublisher()
     }
     
