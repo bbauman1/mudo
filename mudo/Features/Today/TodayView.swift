@@ -77,7 +77,7 @@ struct TodayView: View {
                 }
                 Spacer()
             }
-            .frame(height: 160)
+            .frame(height: 140)
             .padding()
         }
         .padding(.horizontal, -24)
@@ -132,7 +132,7 @@ struct TodayView: View {
     
     var scrollAnchor: some View {
         Color.clear
-            .frame(height: 1)
+            .frame(height: 6)
             .id(scrollAnchorId)
     }
 }
