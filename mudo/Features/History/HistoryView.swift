@@ -11,12 +11,24 @@ struct HistoryView: View {
     
     @ObservedObject var viewModel: HistoryViewModel
     
+    @State var showRecordSheet = false
+    
+    var list: some View {
+        ForEach(viewModel.history) { entry in
+            if !entry.note.isEmpty {
+                NavigationLink {
+                    HistoryDetailView(entry: entry)
+                } label: {
+                    HistoryRowView(entry: entry)
+                }
+            } else {
+                HistoryRowView(entry: entry)
+            }
+        }
+    }
+    
     var body: some View {
-        if viewModel.history.isEmpty {
-            emptyView
-        } else {
-            populatedView
-        }        
+        list
     }
     
     var emptyView: some View {
@@ -35,18 +47,43 @@ struct HistoryView: View {
     
     var populatedView: some View {
         NavigationView {
-            List(viewModel.history) { entry in
-                if !entry.note.isEmpty {
-                    NavigationLink {
-                        HistoryDetailView(entry: entry)
+            List {
+                Section {
+                    Button {
+                        showRecordSheet = true
                     } label: {
-                        HistoryRowView(entry: entry)
+                        VStack(alignment: .leading) {
+                            Text("How ya feeling?")
+                                .font(.system(size: 18, weight: .semibold, design: .rounded))
+                                .foregroundColor(.black)
+                            Text("Record today's mood")
+                                .font(.system(size: 16, weight: .regular, design: .rounded))
+                        }
                     }
-                } else {
-                    HistoryRowView(entry: entry)
+                } header: {
+                    Text("Today")
                 }
+                .headerProminence(.increased)
+
+                Section {
+                    ForEach(viewModel.history) { entry in
+                        if !entry.note.isEmpty {
+                            NavigationLink {
+                                HistoryDetailView(entry: entry)
+                            } label: {
+                                HistoryRowView(entry: entry)
+                            }
+                        } else {
+                            HistoryRowView(entry: entry)
+                        }
+                    }
+                } header: {
+                    Text("History")
+                }
+                .headerProminence(.increased)
             }
             .navigationTitle("History")
         }
+        
     }
 }

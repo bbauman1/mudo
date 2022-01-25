@@ -10,83 +10,77 @@ import SwiftUI
 struct TodayView: View {
 
     @ObservedObject var viewModel: TodayViewModel
-    @State var isSettingsPresented: Bool = false
+    @Binding var isPresented: Bool
     @State var isNoteExpanded: Bool = false
     @FocusState private var isNoteFocused: Bool
     
     private let scrollAnchorId = 333
     
-    var body: some View {
-        NavigationView {
-            content
-                .toolbar {
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        Button {
-                            isSettingsPresented = true
-                        } label: {
-                            Image(systemName: "gear")
-                        }
-                    }
-                }
-                .sheet(isPresented: $isSettingsPresented) {
-                    SettingsView()
-                }
-        }
-    }
+    private let buttonRows = [
+        GridItem(.flexible(minimum: 80)),
+        GridItem(.flexible(minimum: 80))
+    ]
     
-    @ViewBuilder var content: some View {
-        if viewModel.shouldShowRecordView {
-            recordView
-        } else {
-            recordingCompleteView
-        }
+    var body: some View {
+        recordView
+            .onAppear(perform: viewModel.didAppear)
     }
     
     var recordView: some View {
-            ScrollView {
-                ScrollViewReader { proxy in
-                    VStack(spacing: 24) {
-                        Text("How are you feeling today?")
-                            .font(.system(size: 24, weight: .semibold, design: .rounded))
-                        moodButtons
-                        noteView
-                        submitButton
-                        scrollAnchor
-                    }
-                    .padding([.horizontal], 24)
-                    .onReceive(viewModel.scrollToTop) { _ in
-                        withAnimation {
-                            proxy.scrollTo(scrollAnchorId)
-                        }
-                    }
+        ScrollView {
+            ScrollViewReader { proxy in
+                VStack(spacing: 24) {
+                    titleText
+                    gridButtons
+                    noteView
+                    submitButton
+                    scrollAnchor
                 }
-            }
-    }
-    
-    var moodButtons: some View {
-        VStack {
-            ForEach(Array(Mood.displayOrder.enumerated()), id: \.0) { index, moodRow in
-                HStack {
-                    Spacer()
-                    ForEach(moodRow, id: \.displayName) { mood in
-                        Button {
-                            viewModel.selectMood(mood)
-                        } label: {
-                            GroupBox {
-                                VStack {
-                                    Text(mood.emoji)
-                                        .font(.system(size: 32))
-                                    Text(mood.displayName)
-                                }
-                            }
-                            .groupBoxStyle(.circular)
-                        }                        
-                        .overlay(viewModel.mood == mood ? Circle().stroke(Color.accentColor, lineWidth: 3) : nil)
-                        Spacer()
+                .padding([.horizontal, .top], 24)
+                .onReceive(viewModel.scrollToTop) { _ in
+                    withAnimation {
+                        proxy.scrollTo(scrollAnchorId)
                     }
                 }
             }
         }
+    }
+    
+    var titleText: some View {
+        Text("How are you feeling today?")
+            .font(.system(size: 24, weight: .semibold, design: .rounded))
+    }
+    
+    var gridButtons: some View {
+        ScrollView(.horizontal, showsIndicators: false) {
+            LazyHGrid(rows: buttonRows) {
+                ForEach(Mood.allCases, id: \.displayName) { mood in
+                    Button {
+                        viewModel.selectMood(mood)
+                    } label: {
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 32, style: .continuous)
+                                .fill(Color(.secondarySystemBackground))
+                            HStack {
+                                Text(mood.emoji)
+                                    .font(.system(size: 28))
+                                Text(mood.displayName)
+                            }
+                            .frame(maxWidth: .infinity)
+                            .padding()
+                        }
+                        .overlay(viewModel.mood == mood
+                                 ? RoundedRectangle(cornerRadius: 32, style: .continuous)
+                                    .stroke(Color.accentColor, lineWidth: 3)
+                                 : nil)
+                    }
+                }
+                Spacer()
+            }
+            .frame(height: 160)
+            .padding()
+        }
+        .padding(.horizontal, -24)
     }
     
     var noteView: some View {
@@ -129,6 +123,7 @@ struct TodayView: View {
         Button("Save mood") {
             withAnimation {
                 viewModel.recordMood()
+                isPresented = false
             }
         }
         .buttonStyle(.capsule)
@@ -137,24 +132,7 @@ struct TodayView: View {
     
     var scrollAnchor: some View {
         Color.clear
-            .frame(height: 12)
+            .frame(height: 1)
             .id(scrollAnchorId)
-    }
-    
-    var recordingCompleteView: some View {
-        GroupBox {
-            VStack {
-                Image(systemName: "checkmark.circle")
-                    .resizable()
-                    .renderingMode(.template)
-                    .foregroundColor(.accentColor)
-                    .frame(width: 125, height: 125)
-                Button("Undo today's mood") {
-                    withAnimation {
-                        viewModel.undoTodaysEntry()
-                    }
-                }
-            }
-        }
     }
 }

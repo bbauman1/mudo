@@ -16,27 +16,29 @@ struct ContentView: View {
     
     var body: some View {
         if isSplashScreenFinished {
-            tabBarView
+            MudoView(viewModel: .init(moodStore: moodStore))
+                .accentColor(appColor.color)
+                .tint(appColor.color)
         } else {
             splashScreen
         }
     }
     
-    var tabBarView: some View {
-        TabView {
-            TodayView(viewModel: TodayViewModel(moodStore: moodStore))
-                .tabItem {
-                    Label("Today", systemImage: "circle.hexagonpath")
-                }
-            
-            HistoryView(viewModel: HistoryViewModel(moodStore: moodStore))
-                .tabItem {
-                    Label("History", systemImage: "line.3.horizontal")
-                }
-        }
-        .accentColor(appColor.color)
-        .tint(appColor.color)
-    }
+//    var tabBarView: some View {
+//        TabView {
+//            TodayView(viewModel: TodayViewModel(moodStore: moodStore))
+//                .tabItem {
+//                    Label("Today", systemImage: "record.circle")
+//                }
+//            
+//            HistoryView(viewModel: HistoryViewModel(moodStore: moodStore))
+//                .tabItem {
+//                    Label("History", systemImage: "line.3.horizontal")
+//                }
+//        }
+//        .accentColor(appColor.color)
+//        .tint(appColor.color)
+//    }
     
     var splashScreen: some View {
         Text("mudo (wip)")

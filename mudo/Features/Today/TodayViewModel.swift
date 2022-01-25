@@ -11,13 +11,13 @@ import UIKit
 
 class TodayViewModel: ObservableObject {
     
-    @Published private(set) var mood: Mood?
-    @Published var shouldShowRecordView: Bool = true
     @Published var note: String = ""
+    @Published private(set) var mood: Mood?
     
     private let moodStore: MoodStore
-    
     private let feedbackGenerator = UIImpactFeedbackGenerator()
+    
+    private var subscriptions = Subscriptions()
     
     var scrollToTop: AnyPublisher<Void, Never> {
         Publishers.Merge(_scrollToTop, keyboardWillAppear)
@@ -35,10 +35,7 @@ class TodayViewModel: ObservableObject {
     init(moodStore: MoodStore) {
         self.moodStore = moodStore
         
-        moodStore.isTodayRecorded
-            .receive(on: DispatchQueue.main)
-            .map { !$0 }
-            .assign(to: &$shouldShowRecordView)
+        didAppear()
     }
     
     func recordMood() {
@@ -64,5 +61,15 @@ class TodayViewModel: ObservableObject {
     
     func impactOccurred() {
         feedbackGenerator.impactOccurred(intensity: 0.75)
+    }
+    
+    func didAppear() {
+        moodStore.todaysEntry
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] entry in
+                self?.mood = entry?.mood
+                self?.note = entry?.note ?? ""
+            }
+            .store(in: &subscriptions)
     }
 }

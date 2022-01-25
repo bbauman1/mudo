@@ -52,8 +52,8 @@ extension Mood {
     
     static var displayOrder: [[Mood]] {
         [
-            [Mood.energized, .relaxed],
-            [Mood.empty],
+            [Mood.energized, .relaxed, .empty],
+//            [Mood.empty],
             [Mood.anxious, .irritable],
         ]
     }

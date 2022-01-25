@@ -26,14 +26,8 @@ class MoodStore {
     }
     
     var isTodayRecorded: AnyPublisher<Bool, Never> {
-        mostRecentEntry
-            .map {
-                guard let entry = $0 else {
-                    return false
-                }
-                
-                return Calendar.current.isDateInToday(entry.date)
-            }
+        todaysEntry
+            .map { $0 == nil }
             .eraseToAnyPublisher()
     }
     
@@ -43,13 +37,25 @@ class MoodStore {
             .eraseToAnyPublisher()
     }
     
+    var todaysEntry: AnyPublisher<LogEntry?, Never> {
+        mostRecentEntry
+            .map {
+                guard let entry = $0, Calendar.current.isDateInToday(entry.date) else {
+                    return nil
+                }
+                
+                return entry
+            }
+            .eraseToAnyPublisher()
+    }
+    
     func store(_ mood: Mood, note: String) {
         let entry = LogEntry(date: Date(), mood: mood, note: note)
         var history = UserDefaults.standard.logHistory
         
         if let previousEntry = history.first, Calendar.current.isDateInToday(previousEntry.date) {
             print("Error: Attempted to save mood for a day that is already recorded.")
-            return
+            history.removeFirst()
         }
         
         history.insert(entry, at: 0)
@@ -62,6 +68,31 @@ class MoodStore {
             return
         }
         UserDefaults.standard.logHistory = Array(history.dropFirst())
+    }
+}
+
+extension MoodStore {
+    func storeAtEndOfHistory(_ mood: Mood, note: String) {
+        var history = UserDefaults.standard.logHistory
+        
+        let date: Date = {
+            guard
+                let lastStoredDate = history.last?.date,
+                let date = Calendar.current.date(byAdding: .day, value: 1, to: lastStoredDate)
+            else {
+                return Date()
+            }
+            
+            return date
+        }()
+        
+        let entry = LogEntry(date: date, mood: mood, note: note)
+        history.append(entry)
+        UserDefaults.standard.logHistory = history
+    }
+    
+    func removeAll() {
+        UserDefaults.standard.logHistory = []
     }
 }
 

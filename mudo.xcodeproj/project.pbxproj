@@ -29,6 +29,10 @@
 		A834CC492773C81300596EF8 /* Color+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = A834CC482773C81300596EF8 /* Color+Hex.swift */; };
 		A834CC4B2773D5E700596EF8 /* HistoryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A834CC4A2773D5E700596EF8 /* HistoryDetailView.swift */; };
 		A834CC4D2773D60500596EF8 /* HistoryRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A834CC4C2773D60500596EF8 /* HistoryRowView.swift */; };
+		A8F4B737279F9DF7003BD34A /* DetentSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F4B736279F9DF7003BD34A /* DetentSheet.swift */; };
+		A8F4B73A279F9F8E003BD34A /* MudoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F4B739279F9F8E003BD34A /* MudoView.swift */; };
+		A8F4B73C279F9F98003BD34A /* MudoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F4B73B279F9F98003BD34A /* MudoViewModel.swift */; };
+		A8F4B73F279FB2CC003BD34A /* AnyCancellable+Subscriptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F4B73E279FB2CC003BD34A /* AnyCancellable+Subscriptions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +78,10 @@
 		A834CC482773C81300596EF8 /* Color+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Hex.swift"; sourceTree = "<group>"; };
 		A834CC4A2773D5E700596EF8 /* HistoryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDetailView.swift; sourceTree = "<group>"; };
 		A834CC4C2773D60500596EF8 /* HistoryRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryRowView.swift; sourceTree = "<group>"; };
+		A8F4B736279F9DF7003BD34A /* DetentSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetentSheet.swift; sourceTree = "<group>"; };
+		A8F4B739279F9F8E003BD34A /* MudoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MudoView.swift; sourceTree = "<group>"; };
+		A8F4B73B279F9F98003BD34A /* MudoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MudoViewModel.swift; sourceTree = "<group>"; };
+		A8F4B73E279FB2CC003BD34A /* AnyCancellable+Subscriptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AnyCancellable+Subscriptions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,7 +132,8 @@
 		A834CBFD2770E70300596EF8 /* mudo */ = {
 			isa = PBXGroup;
 			children = (
-				A834CC472773C80300596EF8 /* ViewExtensions */,
+				A8F4B73D279FB2B7003BD34A /* Extensions */,
+				A8F4B735279F9DE1003BD34A /* Dependencies */,
 				A834CC422772562C00596EF8 /* Styles */,
 				A834CC322770F98300596EF8 /* Stores */,
 				A834CC312770F97E00596EF8 /* Models */,
@@ -165,6 +174,7 @@
 		A834CC2E2770F95800596EF8 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				A8F4B738279F9F84003BD34A /* Mudo */,
 				A834CC3B277113C500596EF8 /* Settings */,
 				A834CC302770F96A00596EF8 /* History */,
 				A834CC2F2770F95E00596EF8 /* Today */,
@@ -234,6 +244,32 @@
 				A834CC482773C81300596EF8 /* Color+Hex.swift */,
 			);
 			path = ViewExtensions;
+			sourceTree = "<group>";
+		};
+		A8F4B735279F9DE1003BD34A /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				A8F4B736279F9DF7003BD34A /* DetentSheet.swift */,
+			);
+			path = Dependencies;
+			sourceTree = "<group>";
+		};
+		A8F4B738279F9F84003BD34A /* Mudo */ = {
+			isa = PBXGroup;
+			children = (
+				A8F4B739279F9F8E003BD34A /* MudoView.swift */,
+				A8F4B73B279F9F98003BD34A /* MudoViewModel.swift */,
+			);
+			path = Mudo;
+			sourceTree = "<group>";
+		};
+		A8F4B73D279FB2B7003BD34A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A834CC472773C80300596EF8 /* ViewExtensions */,
+				A8F4B73E279FB2CC003BD34A /* AnyCancellable+Subscriptions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -377,12 +413,16 @@
 				A834CC4D2773D60500596EF8 /* HistoryRowView.swift in Sources */,
 				A834CC3D277113D600596EF8 /* SettingsView.swift in Sources */,
 				A834CC342770F99600596EF8 /* MoodStore.swift in Sources */,
+				A8F4B737279F9DF7003BD34A /* DetentSheet.swift in Sources */,
 				A834CC3F27713B8600596EF8 /* NotificationsSettingsViewModel.swift in Sources */,
 				A834CC2D2770EFEC00596EF8 /* TodayViewModel.swift in Sources */,
 				A834CC292770EB3000596EF8 /* TodayView.swift in Sources */,
+				A8F4B73A279F9F8E003BD34A /* MudoView.swift in Sources */,
 				A834CBFF2770E70300596EF8 /* mudoApp.swift in Sources */,
 				A834CC462772573500596EF8 /* CapsuleButtonSyle.swift in Sources */,
 				A834CC442772565A00596EF8 /* CircularGroupBoxStyle.swift in Sources */,
+				A8F4B73F279FB2CC003BD34A /* AnyCancellable+Subscriptions.swift in Sources */,
+				A8F4B73C279F9F98003BD34A /* MudoViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

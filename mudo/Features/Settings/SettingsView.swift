@@ -18,6 +18,7 @@ struct SettingsView: View {
             Form {
                 notificationsSection
                 appSection
+                debugSection
             }
             .navigationTitle("Settings")
         }
@@ -51,5 +52,33 @@ struct SettingsView: View {
                 Text("App theme")
             }
         }
+    }
+}
+
+extension SettingsView {
+    var debugSection: some View {
+        Section(header: Text("Debug")) {
+            Button {
+                let store = MoodStore()
+                for _ in 0..<5 {
+                    let entry = makeRandomEntry()
+                    store.storeAtEndOfHistory(entry.mood, note: entry.note)
+                }
+            } label: {
+                Text("Add 5 fake days to history")
+            }
+            
+            Button {
+                MoodStore().removeAll()
+            } label: {
+                Text("Delete history")
+            }
+        }
+    }
+    
+    private func makeRandomEntry() -> (mood: Mood, note: String) {
+        let mood = Mood.allCases.randomElement()!
+        let note = ["scoop", "poop", "doop", "loop", "boop"].randomElement()!
+        return (mood, note)
     }
 }
