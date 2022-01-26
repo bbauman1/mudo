@@ -17,7 +17,7 @@ struct MudoView: View {
     var body: some View {
         NavigationView {
             statefulView
-                .detentSheet(isPresented: $isTodayEditorPresented, prefersGrabberVisible: true) {
+                .sheet(isPresented: $isTodayEditorPresented) {
                     TodayView(viewModel: viewModel.makeTodayViewModel(), isPresented: $isTodayEditorPresented)
                 }
                 .sheet(isPresented: $isSettingsPresented) {

@@ -78,7 +78,7 @@ extension MoodStore {
         let date: Date = {
             guard
                 let lastStoredDate = history.last?.date,
-                let date = Calendar.current.date(byAdding: .day, value: 1, to: lastStoredDate)
+                let date = Calendar.current.date(byAdding: .day, value: -1, to: lastStoredDate)
             else {
                 return Date()
             }

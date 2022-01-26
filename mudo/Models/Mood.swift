@@ -8,26 +8,60 @@
 import Foundation
 
 enum Mood: CaseIterable, Codable {
+    // MARK: Positive
     case energized
-    case relaxed
-    case empty
+    case happy
+    case embarrased
+    case quiet
+    case proud
+    case tired
+    
+    // MARK: Negative
+    case annoyed
+    case sad
+    case scared
+    case angry
+    case sick
+    case frustrated
     case anxious
-    case irritable
 }
 
 extension Mood {
+    static var displayOrder: [[Mood]] {
+        [
+            [.energized, .happy, .embarrased, .quiet, .proud, .tired],
+            [.annoyed, .sad, .scared, .angry, .sick, frustrated, anxious],
+        ]
+    }
+    
     var displayName: String {
         switch self {
         case .energized:
             return "Energized"
-        case .relaxed:
-            return "Relaxed"
-        case .empty:
-            return "Empty"
+        case .happy:
+            return "Happy"
+        case .embarrased:
+            return "Embarrased"
+        case .scared:
+            return "Scared"
+        case .quiet:
+            return "Quiet"
+        case .proud:
+            return "Proud"
+        case .annoyed:
+            return "Annoyed"
+        case .sad:
+            return "Sad"
+        case .tired:
+            return "Tired"
+        case .angry:
+            return "Angry"
+        case .sick:
+            return "Sick"
+        case .frustrated:
+            return "Frustrated"
         case .anxious:
             return "Anxious"
-        case .irritable:
-            return "Irritable"
         }
     }
     
@@ -35,26 +69,34 @@ extension Mood {
         switch self {
         case .energized:
             return "🥳"
-        case .relaxed:
-            return "😎"
-        case .empty:
-            return "😶"
         case .anxious:
             return "😰"
-        case .irritable:
-            return "😠"
+        case .happy:
+            return "😄"
+        case .embarrased:
+            return "😳"
+        case .quiet:
+            return "😶"
+        case .proud:
+            return "😏"
+        case .tired:
+            return "😴"
+        case .annoyed:
+            return "😑"
+        case .sad:
+            return "😢"
+        case .scared:
+            return "😱"
+        case .angry:
+            return "😡"
+        case .sick:
+            return "😷"
+        case .frustrated:
+            return "😣"
         }
     }
     
     var emojiWithName: String {
         emoji + " " + displayName
-    }
-    
-    static var displayOrder: [[Mood]] {
-        [
-            [Mood.energized, .relaxed, .empty],
-//            [Mood.empty],
-            [Mood.anxious, .irritable],
-        ]
     }
 }

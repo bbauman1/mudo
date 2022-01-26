@@ -9,6 +9,7 @@ import SwiftUI
 
 struct TodayView: View {
 
+    @AppStorage("appColor") var appColor: AppColor = .default
     @ObservedObject var viewModel: TodayViewModel
     @Binding var isPresented: Bool
     @State var isNoteExpanded: Bool = false
@@ -31,7 +32,7 @@ struct TodayView: View {
             ScrollViewReader { proxy in
                 VStack(spacing: 24) {
                     titleText
-                    gridButtons
+                    wrappingMoodButtons
                     noteView
                     submitButton
                     scrollAnchor
@@ -51,38 +52,6 @@ struct TodayView: View {
             .font(.system(size: 24, weight: .semibold, design: .rounded))
     }
     
-    var gridButtons: some View {
-        ScrollView(.horizontal, showsIndicators: false) {
-            LazyHGrid(rows: buttonRows) {
-                ForEach(Mood.allCases, id: \.displayName) { mood in
-                    Button {
-                        viewModel.selectMood(mood)
-                    } label: {
-                        ZStack {
-                            RoundedRectangle(cornerRadius: 32, style: .continuous)
-                                .fill(Color(.secondarySystemBackground))
-                            HStack {
-                                Text(mood.emoji)
-                                    .font(.system(size: 28))
-                                Text(mood.displayName)
-                            }
-                            .frame(maxWidth: .infinity)
-                            .padding()
-                        }
-                        .overlay(viewModel.mood == mood
-                                 ? RoundedRectangle(cornerRadius: 32, style: .continuous)
-                                    .stroke(Color.accentColor, lineWidth: 3)
-                                 : nil)
-                    }
-                }
-                Spacer()
-            }
-            .frame(height: 140)
-            .padding()
-        }
-        .padding(.horizontal, -24)
-    }
-    
     var noteView: some View {
         VStack(spacing: 0) {
             Button {
@@ -96,7 +65,7 @@ struct TodayView: View {
                     Text("Add a note")
                         .font(.system(size: 16, weight: .regular, design: .rounded))
                     Spacer()
-                    Image(systemName: isNoteExpanded ? "minus.circle.fill" : "plus.circle.fill")
+                    Image(systemName: noteImageName)
                 }
                 .padding()
             }
@@ -119,14 +88,32 @@ struct TodayView: View {
         .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
     }
     
+    var noteImageName: String {
+        if isNoteExpanded {
+            return "minus.circle.fill"
+        } else {
+            if viewModel.note.isEmpty {
+                return "plus.circle.fill"
+            } else {
+                return "checkmark.circle.fill"
+            }
+        }
+    }
+    
     var submitButton: some View {
-        Button("Save mood") {
+        Button {
             withAnimation {
                 viewModel.recordMood()
                 isPresented = false
             }
+        } label: {
+            Text("Save mood")
+                .frame(maxWidth: .infinity)
         }
-        .buttonStyle(.capsule)
+        .buttonStyle(.borderedProminent)
+        .buttonBorderShape(.capsule)
+        .controlSize(.large)
+        .frame(maxWidth: .infinity)
         .disabled(viewModel.mood == nil)
     }
     
@@ -134,5 +121,82 @@ struct TodayView: View {
         Color.clear
             .frame(height: 6)
             .id(scrollAnchorId)
+    }
+    
+    // MARK: WrappingMoodButtons
+    // todo: move to separate file
+
+    @State private var totalHeight = CGFloat.zero
+    let moods = Mood.allCases
+
+    var wrappingMoodButtons: some View {
+        VStack {
+            GeometryReader { geometry in
+                self.generateContent(in: geometry)
+            }
+        }
+        .frame(height: totalHeight)
+    }
+
+    private func generateContent(in g: GeometryProxy) -> some View {
+        var width = CGFloat.zero
+        var height = CGFloat.zero
+
+        return ZStack(alignment: .topLeading) {
+            ForEach(Mood.allCases, id: \.self) { mood in
+                self.item(for: mood)
+                    .padding([.horizontal, .vertical], 8)
+                    .alignmentGuide(.leading, computeValue: { d in
+                        if (abs(width - d.width) > g.size.width) {
+                            width = 0
+                            height -= d.height
+                        }
+                        let result = width
+                        if mood == moods.last! {
+                            width = 0
+                        } else {
+                            width -= d.width
+                        }
+                        return result
+                    })
+                    .alignmentGuide(.top, computeValue: {d in
+                        let result = height
+                        if mood == moods.last! {
+                            height = 0
+                        }
+                        return result
+                    })
+            }
+        }.background(viewHeightReader($totalHeight))
+    }
+
+    private func item(for mood: Mood) -> some View {
+        Button {
+            viewModel.selectMood(mood)
+        } label: {
+            Label {
+                Text(mood.displayName)
+            } icon: {
+                Text(mood.emoji)
+                    .font(.system(size: 28))
+            }
+        }
+        .buttonStyle(.bordered)
+        .buttonBorderShape(.capsule)
+        .tint(appColor.color)
+        .overlay(viewModel.mood == mood
+                 ? Capsule().stroke(appColor.color, lineWidth: 2)
+                 : nil)
+        .scaleEffect(viewModel.mood == mood ? 1.1 : 1)
+    }
+
+    private func viewHeightReader(_ binding: Binding<CGFloat>) -> some View {
+        return GeometryReader { geometry -> Color in
+            let rect = geometry.frame(in: .local)
+            DispatchQueue.main.async {
+                binding.wrappedValue = rect.size.height
+            }
+            return .clear
+        }
     }
 }
