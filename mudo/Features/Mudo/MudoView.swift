@@ -48,9 +48,7 @@ struct MudoView: View {
     
     var emptyView: some View {
         Button {
-            withAnimation {
-                isTodayEditorPresented = true
-            }
+            isTodayEditorPresented = true
         } label: {
             VStack {
                 Text("No moods recorded yet!")
@@ -77,9 +75,7 @@ struct MudoView: View {
     var todaySection: some View {
         Section {
             Button {
-                withAnimation {
-                    isTodayEditorPresented = true
-                }
+                isTodayEditorPresented = true
             } label: {
                 Text("Edit todays mood")
             }

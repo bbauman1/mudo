@@ -24,22 +24,6 @@ struct ContentView: View {
         }
     }
     
-//    var tabBarView: some View {
-//        TabView {
-//            TodayView(viewModel: TodayViewModel(moodStore: moodStore))
-//                .tabItem {
-//                    Label("Today", systemImage: "record.circle")
-//                }
-//            
-//            HistoryView(viewModel: HistoryViewModel(moodStore: moodStore))
-//                .tabItem {
-//                    Label("History", systemImage: "line.3.horizontal")
-//                }
-//        }
-//        .accentColor(appColor.color)
-//        .tint(appColor.color)
-//    }
-    
     var splashScreen: some View {
         Text("mudo (wip)")
             .font(.system(size: 36, weight: .bold, design: .rounded))

@@ -17,11 +17,6 @@ struct TodayView: View {
     
     private let scrollAnchorId = 333
     
-    private let buttonRows = [
-        GridItem(.flexible(minimum: 80)),
-        GridItem(.flexible(minimum: 80))
-    ]
-    
     var body: some View {
         recordView
             .onAppear(perform: viewModel.didAppear)
@@ -81,6 +76,11 @@ struct TodayView: View {
                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                             isNoteFocused = true
                         }
+                    }
+                    .submitLabel(.done)
+                    .onSubmit {
+                        viewModel.recordMood()
+                        isPresented = false
                     }
             }
         }
