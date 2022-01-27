@@ -73,6 +73,12 @@ extension SettingsView {
             } label: {
                 Text("Delete history")
             }
+            
+            Button {
+                MoodStore().annieBackup()
+            } label: {
+                Text("Backup annie's data")
+            }
         }
     }
     
