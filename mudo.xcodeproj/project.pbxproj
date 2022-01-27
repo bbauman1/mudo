@@ -30,6 +30,7 @@
 		A834CC4B2773D5E700596EF8 /* HistoryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A834CC4A2773D5E700596EF8 /* HistoryDetailView.swift */; };
 		A834CC4D2773D60500596EF8 /* HistoryRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A834CC4C2773D60500596EF8 /* HistoryRowView.swift */; };
 		A8BB623927A10D5F00A158A7 /* Subscriptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BB623827A10D5F00A158A7 /* Subscriptions.swift */; };
+		A8BB623C27A262CA00A158A7 /* Takeover.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A8BB623B27A262CA00A158A7 /* Takeover.ttf */; };
 		A8F4B737279F9DF7003BD34A /* DetentSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F4B736279F9DF7003BD34A /* DetentSheet.swift */; };
 		A8F4B73A279F9F8E003BD34A /* MudoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F4B739279F9F8E003BD34A /* MudoView.swift */; };
 		A8F4B73C279F9F98003BD34A /* MudoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F4B73B279F9F98003BD34A /* MudoViewModel.swift */; };
@@ -79,6 +80,8 @@
 		A834CC4A2773D5E700596EF8 /* HistoryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDetailView.swift; sourceTree = "<group>"; };
 		A834CC4C2773D60500596EF8 /* HistoryRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryRowView.swift; sourceTree = "<group>"; };
 		A8BB623827A10D5F00A158A7 /* Subscriptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subscriptions.swift; sourceTree = "<group>"; };
+		A8BB623B27A262CA00A158A7 /* Takeover.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Takeover.ttf; sourceTree = "<group>"; };
+		A8BB623F27A265AE00A158A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		A8F4B736279F9DF7003BD34A /* DetentSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetentSheet.swift; sourceTree = "<group>"; };
 		A8F4B739279F9F8E003BD34A /* MudoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MudoView.swift; sourceTree = "<group>"; };
 		A8F4B73B279F9F98003BD34A /* MudoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MudoViewModel.swift; sourceTree = "<group>"; };
@@ -132,6 +135,8 @@
 		A834CBFD2770E70300596EF8 /* mudo */ = {
 			isa = PBXGroup;
 			children = (
+				A8BB623F27A265AE00A158A7 /* Info.plist */,
+				A8BB623A27A262B400A158A7 /* Fonts */,
 				A8F4B73D279FB2B7003BD34A /* Extensions */,
 				A8F4B735279F9DE1003BD34A /* Dependencies */,
 				A834CC422772562C00596EF8 /* Styles */,
@@ -245,6 +250,14 @@
 				A834CC482773C81300596EF8 /* Color+Hex.swift */,
 			);
 			path = ViewExtensions;
+			sourceTree = "<group>";
+		};
+		A8BB623A27A262B400A158A7 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				A8BB623B27A262CA00A158A7 /* Takeover.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		A8F4B735279F9DE1003BD34A /* Dependencies */ = {
@@ -376,6 +389,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8BB623C27A262CA00A158A7 /* Takeover.ttf in Resources */,
 				A834CC062770E70B00596EF8 /* Preview Assets.xcassets in Resources */,
 				A834CC032770E70A00596EF8 /* Assets.xcassets in Resources */,
 			);
@@ -586,12 +600,13 @@
 				DEVELOPMENT_TEAM = Y9ZLF8R6XZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = mudo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -616,12 +631,13 @@
 				DEVELOPMENT_TEAM = Y9ZLF8R6XZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = mudo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

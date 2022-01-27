@@ -11,6 +11,7 @@ struct ContentView: View {
     
     @AppStorage("appColor") var appColor: AppColor = .default
     @State var isSplashScreenFinished: Bool = false
+    @Environment(\.colorScheme) var colorScheme
     
     let moodStore = MoodStore()
     
@@ -25,15 +26,26 @@ struct ContentView: View {
     }
     
     var splashScreen: some View {
-        Text("mudo (wip)")
-            .font(.system(size: 36, weight: .bold, design: .rounded))
-            .onAppear {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-                    withAnimation {
-                        isSplashScreenFinished = true
+        ZStack {
+            if colorScheme == .dark {
+                Color.black
+                    .ignoresSafeArea()
+            } else {
+                Color(hex: 0xfffff2)
+                    .ignoresSafeArea()
+            }
+            
+            Text("mudo")
+                .font(.custom("Takeover", size: 64))
+                .foregroundColor(colorScheme == .dark ? Color(hex: 0xfffff2) : .black)
+                .onAppear {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                        withAnimation {
+                            isSplashScreenFinished = true
+                        }
                     }
                 }
-            }
+        }
     }
 }
 
