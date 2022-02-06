@@ -24,7 +24,6 @@
 		A834CC3D277113D600596EF8 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A834CC3C277113D600596EF8 /* SettingsView.swift */; };
 		A834CC3F27713B8600596EF8 /* NotificationsSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A834CC3E27713B8600596EF8 /* NotificationsSettingsViewModel.swift */; };
 		A834CC412771681D00596EF8 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A834CC402771681D00596EF8 /* AppColor.swift */; };
-		A834CC442772565A00596EF8 /* CircularGroupBoxStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A834CC432772565A00596EF8 /* CircularGroupBoxStyle.swift */; };
 		A834CC462772573500596EF8 /* CapsuleButtonSyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A834CC452772573500596EF8 /* CapsuleButtonSyle.swift */; };
 		A834CC492773C81300596EF8 /* Color+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = A834CC482773C81300596EF8 /* Color+Hex.swift */; };
 		A834CC4B2773D5E700596EF8 /* HistoryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A834CC4A2773D5E700596EF8 /* HistoryDetailView.swift */; };
@@ -74,7 +73,6 @@
 		A834CC3C277113D600596EF8 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		A834CC3E27713B8600596EF8 /* NotificationsSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsSettingsViewModel.swift; sourceTree = "<group>"; };
 		A834CC402771681D00596EF8 /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
-		A834CC432772565A00596EF8 /* CircularGroupBoxStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularGroupBoxStyle.swift; sourceTree = "<group>"; };
 		A834CC452772573500596EF8 /* CapsuleButtonSyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleButtonSyle.swift; sourceTree = "<group>"; };
 		A834CC482773C81300596EF8 /* Color+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Hex.swift"; sourceTree = "<group>"; };
 		A834CC4A2773D5E700596EF8 /* HistoryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDetailView.swift; sourceTree = "<group>"; };
@@ -238,7 +236,6 @@
 		A834CC422772562C00596EF8 /* Styles */ = {
 			isa = PBXGroup;
 			children = (
-				A834CC432772565A00596EF8 /* CircularGroupBoxStyle.swift */,
 				A834CC452772573500596EF8 /* CapsuleButtonSyle.swift */,
 			);
 			path = Styles;
@@ -435,7 +432,6 @@
 				A8F4B73A279F9F8E003BD34A /* MudoView.swift in Sources */,
 				A834CBFF2770E70300596EF8 /* mudoApp.swift in Sources */,
 				A834CC462772573500596EF8 /* CapsuleButtonSyle.swift in Sources */,
-				A834CC442772565A00596EF8 /* CircularGroupBoxStyle.swift in Sources */,
 				A8F4B73C279F9F98003BD34A /* MudoViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

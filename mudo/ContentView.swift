@@ -37,7 +37,8 @@ struct ContentView: View {
             
             Text("mudo")
                 .font(.custom("Takeover", size: 64))
-                .foregroundColor(colorScheme == .dark ? Color(hex: 0xfffff2) : .black)
+                .foregroundColor(appColor.color)
+//                .foregroundColor(colorScheme == .dark ? Color(hex: 0xfffff2) : .black)
                 .onAppear {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
                         withAnimation {

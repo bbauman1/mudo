@@ -13,29 +13,32 @@ struct HistoryDetailView: View {
     
     var body: some View {
         ScrollView {
-            ZStack {
-                VStack(alignment: .leading, spacing: 8) {
-                    HStack {
-                        Image(systemName: "note.text")
-                        Text("Note")
-                            .font(.system(size: 16, weight: .regular, design: .rounded))
-                    }
-                    HStack {
-                        Text(entry.note)
-                            .font(.system(size: 18, weight: .regular, design: .rounded))
-                        Spacer()
-                    }
-                }
-                .padding()
-                .multilineTextAlignment(.leading)
-                .background(
-                    RoundedRectangle(cornerRadius: 16, style: .continuous)
-                        .fill(Color(.secondarySystemBackground))
-                )
+            Group {
+                note
             }
-            .padding(.horizontal, 24)
+            .padding(.horizontal, 16)
         }
         .navigationTitle(entry.mood.emojiWithName)
-        .navigationBarTitleDisplayMode(.large)
+    }
+    
+    var note: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            HStack {
+                Image(systemName: "note.text")
+                Text("Note")
+                    .font(.system(size: 16, weight: .regular, design: .rounded))
+            }
+            HStack {
+                Text(entry.note)
+                    .font(.system(size: 18, weight: .regular, design: .rounded))
+                Spacer()
+            }
+        }
+        .padding()
+        .multilineTextAlignment(.leading)
+        .background(
+            RoundedRectangle(cornerRadius: 16, style: .continuous)
+                .fill(Color(.secondarySystemBackground))
+        )
     }
 }
