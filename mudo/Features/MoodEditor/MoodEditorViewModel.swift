@@ -1,5 +1,5 @@
 //
-//  TodayViewModel.swift
+//  MoodEditorViewModel.swift
 //  mudo
 //
 //  Created by Brett Bauman on 12/20/21.
@@ -9,7 +9,7 @@ import Combine
 import Foundation
 import UIKit
 
-class TodayViewModel: ObservableObject {
+class MoodEditorViewModel: ObservableObject {
     
     @Published var note: String = ""
     @Published private(set) var mood: Mood?

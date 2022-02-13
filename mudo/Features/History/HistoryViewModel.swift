@@ -12,11 +12,7 @@ class HistoryViewModel: ObservableObject {
     
     @Published var history: [Entry] = []
     
-    var todayvm: TodayViewModel
-    
     init(moodStore: MoodStore) {
-        self.todayvm = .init(moodStore: moodStore)
-        
         moodStore.history
             .map { $0.map(Entry.init) }
             .receive(on: DispatchQueue.main)

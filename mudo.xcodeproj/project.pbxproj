@@ -14,9 +14,9 @@
 		A834CC102770E70C00596EF8 /* mudoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A834CC0F2770E70C00596EF8 /* mudoTests.swift */; };
 		A834CC1A2770E70C00596EF8 /* mudoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A834CC192770E70C00596EF8 /* mudoUITests.swift */; };
 		A834CC1C2770E70C00596EF8 /* mudoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A834CC1B2770E70C00596EF8 /* mudoUITestsLaunchTests.swift */; };
-		A834CC292770EB3000596EF8 /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A834CC282770EB3000596EF8 /* TodayView.swift */; };
+		A834CC292770EB3000596EF8 /* MoodEdtiorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A834CC282770EB3000596EF8 /* MoodEdtiorView.swift */; };
 		A834CC2B2770EFD700596EF8 /* Mood.swift in Sources */ = {isa = PBXBuildFile; fileRef = A834CC2A2770EFD700596EF8 /* Mood.swift */; };
-		A834CC2D2770EFEC00596EF8 /* TodayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A834CC2C2770EFEC00596EF8 /* TodayViewModel.swift */; };
+		A834CC2D2770EFEC00596EF8 /* MoodEditorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A834CC2C2770EFEC00596EF8 /* MoodEditorViewModel.swift */; };
 		A834CC342770F99600596EF8 /* MoodStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A834CC332770F99600596EF8 /* MoodStore.swift */; };
 		A834CC362770FA5900596EF8 /* LogEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = A834CC352770FA5900596EF8 /* LogEntry.swift */; };
 		A834CC382771012000596EF8 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A834CC372771012000596EF8 /* HistoryView.swift */; };
@@ -63,9 +63,9 @@
 		A834CC152770E70C00596EF8 /* mudoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mudoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A834CC192770E70C00596EF8 /* mudoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mudoUITests.swift; sourceTree = "<group>"; };
 		A834CC1B2770E70C00596EF8 /* mudoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mudoUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		A834CC282770EB3000596EF8 /* TodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayView.swift; sourceTree = "<group>"; };
+		A834CC282770EB3000596EF8 /* MoodEdtiorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodEdtiorView.swift; sourceTree = "<group>"; };
 		A834CC2A2770EFD700596EF8 /* Mood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mood.swift; sourceTree = "<group>"; };
-		A834CC2C2770EFEC00596EF8 /* TodayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewModel.swift; sourceTree = "<group>"; };
+		A834CC2C2770EFEC00596EF8 /* MoodEditorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodEditorViewModel.swift; sourceTree = "<group>"; };
 		A834CC332770F99600596EF8 /* MoodStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodStore.swift; sourceTree = "<group>"; };
 		A834CC352770FA5900596EF8 /* LogEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogEntry.swift; sourceTree = "<group>"; };
 		A834CC372771012000596EF8 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
@@ -180,18 +180,18 @@
 				A8F4B738279F9F84003BD34A /* Mudo */,
 				A834CC3B277113C500596EF8 /* Settings */,
 				A834CC302770F96A00596EF8 /* History */,
-				A834CC2F2770F95E00596EF8 /* Today */,
+				A834CC2F2770F95E00596EF8 /* MoodEditor */,
 			);
 			path = Features;
 			sourceTree = "<group>";
 		};
-		A834CC2F2770F95E00596EF8 /* Today */ = {
+		A834CC2F2770F95E00596EF8 /* MoodEditor */ = {
 			isa = PBXGroup;
 			children = (
-				A834CC282770EB3000596EF8 /* TodayView.swift */,
-				A834CC2C2770EFEC00596EF8 /* TodayViewModel.swift */,
+				A834CC282770EB3000596EF8 /* MoodEdtiorView.swift */,
+				A834CC2C2770EFEC00596EF8 /* MoodEditorViewModel.swift */,
 			);
-			path = Today;
+			path = MoodEditor;
 			sourceTree = "<group>";
 		};
 		A834CC302770F96A00596EF8 /* History */ = {
@@ -427,8 +427,8 @@
 				A834CC342770F99600596EF8 /* MoodStore.swift in Sources */,
 				A8F4B737279F9DF7003BD34A /* DetentSheet.swift in Sources */,
 				A834CC3F27713B8600596EF8 /* NotificationsSettingsViewModel.swift in Sources */,
-				A834CC2D2770EFEC00596EF8 /* TodayViewModel.swift in Sources */,
-				A834CC292770EB3000596EF8 /* TodayView.swift in Sources */,
+				A834CC2D2770EFEC00596EF8 /* MoodEditorViewModel.swift in Sources */,
+				A834CC292770EB3000596EF8 /* MoodEdtiorView.swift in Sources */,
 				A8F4B73A279F9F8E003BD34A /* MudoView.swift in Sources */,
 				A834CBFF2770E70300596EF8 /* mudoApp.swift in Sources */,
 				A834CC462772573500596EF8 /* CapsuleButtonSyle.swift in Sources */,

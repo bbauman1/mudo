@@ -1,5 +1,5 @@
 //
-//  TodayView.swift
+//  MoodEditorView.swift
 //  mudo
 //
 //  Created by Brett Bauman on 12/20/21.
@@ -7,11 +7,14 @@
 
 import SwiftUI
 
-struct TodayView: View {
+struct MoodEditorView: View {
 
     @AppStorage("appColor") var appColor: AppColor = .default
-    @ObservedObject var viewModel: TodayViewModel
-    @Binding var isPresented: Bool
+    
+    @ObservedObject var viewModel: MoodEditorViewModel
+    
+    @Environment(\.dismiss) var dismiss
+    
     @State var isNoteExpanded: Bool = false
     @FocusState private var isNoteFocused: Bool
     
@@ -80,7 +83,6 @@ struct TodayView: View {
                     .submitLabel(.done)
                     .onSubmit {
                         viewModel.recordMood()
-                        isPresented = false
                     }
             }
         }
@@ -102,10 +104,8 @@ struct TodayView: View {
     
     var submitButton: some View {
         Button {
-            withAnimation {
-                viewModel.recordMood()
-                isPresented = false
-            }
+            viewModel.recordMood()
+            dismiss()
         } label: {
             Text("Save mood")
                 .frame(maxWidth: .infinity)

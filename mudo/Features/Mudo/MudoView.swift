@@ -12,13 +12,13 @@ struct MudoView: View {
     
     @ObservedObject var viewModel: MudoViewModel
     @State var isSettingsPresented: Bool = false
-    @State var isTodayEditorPresented: Bool = false
+    @State var isMoodEditorPresented: Bool = false
     
     var body: some View {
         NavigationView {
             statefulView
-                .sheet(isPresented: $isTodayEditorPresented) {
-                    TodayView(viewModel: viewModel.makeTodayViewModel(), isPresented: $isTodayEditorPresented)
+                .sheet(isPresented: $isMoodEditorPresented) {
+                    MoodEditorView(viewModel: viewModel.makeMoodEditorViewModel())
                 }
                 .sheet(isPresented: $isSettingsPresented) {
                     SettingsView()
@@ -48,7 +48,7 @@ struct MudoView: View {
     
     var emptyView: some View {
         Button {
-            isTodayEditorPresented = true
+            isMoodEditorPresented = true
         } label: {
             VStack {
                 Text("No moods recorded yet!")
@@ -75,7 +75,7 @@ struct MudoView: View {
     var todaySection: some View {
         Section {
             Button {
-                isTodayEditorPresented = true
+                isMoodEditorPresented = true
             } label: {
                 Text("Edit todays mood")
             }

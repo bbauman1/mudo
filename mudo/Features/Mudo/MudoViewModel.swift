@@ -26,8 +26,8 @@ class MudoViewModel: ObservableObject {
             .store(in: &subscriptions)
     }
     
-    func makeTodayViewModel() -> TodayViewModel {
-        TodayViewModel(moodStore: moodStore)
+    func makeMoodEditorViewModel() -> MoodEditorViewModel {
+        MoodEditorViewModel(moodStore: moodStore)
     }
     
     func makeHistoryViewModel() -> HistoryViewModel {
