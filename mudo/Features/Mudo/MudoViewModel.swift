@@ -6,17 +6,20 @@
 //
 
 import Foundation
+import HealthKit
 
 class MudoViewModel: ObservableObject {
     
     @Published var state: State = .empty
     
     private let moodStore: MoodStore
+    private let healthStore: HKHealthStore
     
     private var subscriptions = Subscriptions()
     
-    init(moodStore: MoodStore) {
+    init(moodStore: MoodStore, healthStore: HKHealthStore) {
         self.moodStore = moodStore
+        self.healthStore = healthStore
         
         moodStore.history
             .map(\.isEmpty)
@@ -31,7 +34,7 @@ class MudoViewModel: ObservableObject {
     }
     
     func makeHistoryViewModel() -> HistoryViewModel {
-        HistoryViewModel(moodStore: moodStore)
+        HistoryViewModel(moodStore: moodStore, healthStore: healthStore)
     }
 }
 

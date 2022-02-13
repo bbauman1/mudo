@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HistoryRowView: View {
     
-    let entry: HistoryViewModel.Entry
+    let entry: HistoryEntry
     
     var body: some View {
         VStack(alignment: .leading) {

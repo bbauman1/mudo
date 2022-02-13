@@ -5,6 +5,7 @@
 //  Created by Brett Bauman on 12/20/21.
 //
 
+import HealthKit
 import SwiftUI
 
 struct ContentView: View {
@@ -13,11 +14,11 @@ struct ContentView: View {
     @State var isSplashScreenFinished: Bool = false
     @Environment(\.colorScheme) var colorScheme
     
-    let moodStore = MoodStore()
+    let viewModel = MudoViewModel(moodStore: MoodStore(), healthStore: HKHealthStore())
     
     var body: some View {
         if isSplashScreenFinished {
-            MudoView(viewModel: .init(moodStore: moodStore))
+            MudoView(viewModel: viewModel)
                 .accentColor(appColor.color)
                 .tint(appColor.color)
         } else {

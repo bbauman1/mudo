@@ -7,37 +7,20 @@
 
 import Foundation
 import Combine
+import HealthKit
 
 class HistoryViewModel: ObservableObject {
     
-    @Published var history: [Entry] = []
+    @Published var history: [HistoryEntry] = []
     
-    init(moodStore: MoodStore) {
+    private let healthStore: HKHealthStore
+    
+    init(moodStore: MoodStore, healthStore: HKHealthStore) {
+        self.healthStore = healthStore
+        
         moodStore.history
-            .map { $0.map(Entry.init) }
+            .map { $0.map(HistoryEntry.init) }
             .receive(on: DispatchQueue.main)
             .assign(to: &$history)
-        
-        
-    }
-    
-}
-
-extension HistoryViewModel {
-    struct Entry: Identifiable {
-        let id = UUID()
-        let mood: Mood
-        let dateString: String
-        let note: String
-        
-        init(from logEntry: LogEntry) {
-            self.mood = logEntry.mood
-            self.dateString = {
-                let date = logEntry.date.formatted(.dateTime.month(.wide).day(.defaultDigits))
-                let time = logEntry.date.formatted(.dateTime.hour(.defaultDigits(amPM: .abbreviated)).minute(.defaultDigits))
-                return date + " • " + time
-            }()
-            self.note = logEntry.note
-        }
     }
 }

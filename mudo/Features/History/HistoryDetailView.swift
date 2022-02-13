@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HistoryDetailView: View {
     
-    let entry: HistoryViewModel.Entry
+    let entry: HistoryEntry
     
     var body: some View {
         ScrollView {
