@@ -53,7 +53,7 @@ extension HealthDataType {
         case .exerciseTime:
             return .time(.minutes)
         case .standTime:
-            return .time(.hours)
+            return .time(.minutes)
         case .activeEnergyBurned:
             return .calories
         case .distanceWalkingRunning:

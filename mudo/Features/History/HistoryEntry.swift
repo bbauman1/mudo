@@ -11,6 +11,7 @@ struct HistoryEntry: Identifiable {
     let id = UUID()
     let mood: Mood
     let dateString: String
+    let dateStringAbbreviated: String
     let date: Date
     let note: String
     
@@ -21,6 +22,7 @@ struct HistoryEntry: Identifiable {
             let time = logEntry.date.formatted(.dateTime.hour(.defaultDigits(amPM: .abbreviated)).minute(.defaultDigits))
             return date + " • " + time
         }()
+        self.dateStringAbbreviated = logEntry.date.formatted(.dateTime.month(.abbreviated).day(.defaultDigits))
         self.date = logEntry.date
         self.note = logEntry.note
     }

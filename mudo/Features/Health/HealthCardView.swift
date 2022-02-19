@@ -16,8 +16,9 @@ struct HealthCardView: View {
         HStack(spacing: 8) {
             icon
             VStack(alignment: .leading) {
-                valueText
                 descriptionText
+                valueText
+                
             }
             Spacer()
         }
@@ -41,7 +42,7 @@ struct HealthCardView: View {
     
     var valueText: some View {
         Group {
-            Text(String(value))
+            Text("\(value, specifier: "%.\(dataType.measurement.significantDigits)f")")
                 .font(.system(size: 22, weight: .bold, design: .rounded))
             +
             Text(" " + dataType.measurement.unit)

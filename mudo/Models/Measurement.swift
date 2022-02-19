@@ -25,6 +25,19 @@ enum Measurement {
             return string
         }
     }
+    
+    var significantDigits: Int {
+        switch self {
+        case .time:
+            return 0
+        case .distance:
+            return 2
+        case .calories:
+            return 0
+        case .custom:
+            return 0
+        }
+    }
 }
 
 extension Measurement {
