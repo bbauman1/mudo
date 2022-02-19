@@ -28,7 +28,7 @@ struct MudoView: View {
                         Button {
                             isSettingsPresented = true
                         } label: {
-                            Image(systemName: "gear")
+                            Image(systemName: "gearshape")
                         }
                     }
                 }

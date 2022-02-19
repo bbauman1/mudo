@@ -7,20 +7,23 @@
 
 import Foundation
 import Combine
-import HealthKit
 
 class HistoryViewModel: ObservableObject {
     
     @Published var history: [HistoryEntry] = []
     
-    private let healthStore: HKHealthStore
+    private let healthStore: HealthStore
     
-    init(moodStore: MoodStore, healthStore: HKHealthStore) {
+    init(moodStore: MoodStore, healthStore: HealthStore) {
         self.healthStore = healthStore
         
         moodStore.history
             .map { $0.map(HistoryEntry.init) }
             .receive(on: DispatchQueue.main)
             .assign(to: &$history)
+    }
+    
+    func makeDetailViewModel(for entry: HistoryEntry) -> HistoryDetailViewModel {
+        HistoryDetailViewModel(entry: entry, healthStore: healthStore)
     }
 }

@@ -6,18 +6,17 @@
 //
 
 import Foundation
-import HealthKit
 
 class MudoViewModel: ObservableObject {
     
     @Published var state: State = .empty
     
     private let moodStore: MoodStore
-    private let healthStore: HKHealthStore
+    private let healthStore: HealthStore
     
     private var subscriptions = Subscriptions()
     
-    init(moodStore: MoodStore, healthStore: HKHealthStore) {
+    init(moodStore: MoodStore, healthStore: HealthStore) {
         self.moodStore = moodStore
         self.healthStore = healthStore
         

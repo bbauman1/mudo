@@ -14,7 +14,10 @@ struct ContentView: View {
     @State var isSplashScreenFinished: Bool = false
     @Environment(\.colorScheme) var colorScheme
     
-    let viewModel = MudoViewModel(moodStore: MoodStore(), healthStore: HKHealthStore())
+    let viewModel = MudoViewModel(
+        moodStore: MoodStore(),
+        healthStore: HealthStore(
+            hkHealthStore: HKHealthStore()))
     
     var body: some View {
         if isSplashScreenFinished {

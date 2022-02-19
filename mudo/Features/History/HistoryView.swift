@@ -13,13 +13,9 @@ struct HistoryView: View {
     
     var body: some View {
         ForEach(viewModel.history) { entry in
-            if !entry.note.isEmpty {
-                NavigationLink {
-                    HistoryDetailView(entry: entry)
-                } label: {
-                    HistoryRowView(entry: entry)
-                }
-            } else {
+            NavigationLink {
+                HistoryDetailView(viewModel: viewModel.makeDetailViewModel(for: entry))
+            } label: {
                 HistoryRowView(entry: entry)
             }
         }

@@ -32,6 +32,12 @@
 		A8BB623C27A262CA00A158A7 /* Takeover.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A8BB623B27A262CA00A158A7 /* Takeover.ttf */; };
 		A8BB624427B98F8300A158A7 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8BB624327B98F8300A158A7 /* HealthKit.framework */; };
 		A8BB624627B9916D00A158A7 /* HistoryEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BB624527B9916D00A158A7 /* HistoryEntry.swift */; };
+		A8BB624927B9A4AB00A158A7 /* HealthDataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BB624827B9A4AB00A158A7 /* HealthDataType.swift */; };
+		A8BB624C27B9A62700A158A7 /* HKQueryExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BB624B27B9A62700A158A7 /* HKQueryExtensions.swift */; };
+		A8BB624E27B9B01A00A158A7 /* HealthCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BB624D27B9B01A00A158A7 /* HealthCardView.swift */; };
+		A8F3C13227C066CA00EB343B /* HealthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F3C13127C066CA00EB343B /* HealthStore.swift */; };
+		A8F3C13427C0672800EB343B /* HealthEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F3C13327C0672800EB343B /* HealthEntry.swift */; };
+		A8F3C13627C074C700EB343B /* Measurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F3C13527C074C700EB343B /* Measurement.swift */; };
 		A8F4B737279F9DF7003BD34A /* DetentSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F4B736279F9DF7003BD34A /* DetentSheet.swift */; };
 		A8F4B73A279F9F8E003BD34A /* MudoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F4B739279F9F8E003BD34A /* MudoView.swift */; };
 		A8F4B73C279F9F98003BD34A /* MudoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F4B73B279F9F98003BD34A /* MudoViewModel.swift */; };
@@ -85,6 +91,12 @@
 		A8BB624127B98F8200A158A7 /* mudo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = mudo.entitlements; sourceTree = "<group>"; };
 		A8BB624327B98F8300A158A7 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		A8BB624527B9916D00A158A7 /* HistoryEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryEntry.swift; sourceTree = "<group>"; };
+		A8BB624827B9A4AB00A158A7 /* HealthDataType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthDataType.swift; sourceTree = "<group>"; };
+		A8BB624B27B9A62700A158A7 /* HKQueryExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HKQueryExtensions.swift; sourceTree = "<group>"; };
+		A8BB624D27B9B01A00A158A7 /* HealthCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthCardView.swift; sourceTree = "<group>"; };
+		A8F3C13127C066CA00EB343B /* HealthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthStore.swift; sourceTree = "<group>"; };
+		A8F3C13327C0672800EB343B /* HealthEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthEntry.swift; sourceTree = "<group>"; };
+		A8F3C13527C074C700EB343B /* Measurement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Measurement.swift; sourceTree = "<group>"; };
 		A8F4B736279F9DF7003BD34A /* DetentSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetentSheet.swift; sourceTree = "<group>"; };
 		A8F4B739279F9F8E003BD34A /* MudoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MudoView.swift; sourceTree = "<group>"; };
 		A8F4B73B279F9F98003BD34A /* MudoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MudoViewModel.swift; sourceTree = "<group>"; };
@@ -185,6 +197,7 @@
 		A834CC2E2770F95800596EF8 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				A8BB624727B9A49200A158A7 /* Health */,
 				A8F4B738279F9F84003BD34A /* Mudo */,
 				A834CC3B277113C500596EF8 /* Settings */,
 				A834CC302770F96A00596EF8 /* History */,
@@ -221,6 +234,7 @@
 				A834CC352770FA5900596EF8 /* LogEntry.swift */,
 				A834CC402771681D00596EF8 /* AppColor.swift */,
 				A8BB623827A10D5F00A158A7 /* Subscriptions.swift */,
+				A8F3C13527C074C700EB343B /* Measurement.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -274,6 +288,25 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A8BB624727B9A49200A158A7 /* Health */ = {
+			isa = PBXGroup;
+			children = (
+				A8BB624827B9A4AB00A158A7 /* HealthDataType.swift */,
+				A8BB624D27B9B01A00A158A7 /* HealthCardView.swift */,
+				A8F3C13127C066CA00EB343B /* HealthStore.swift */,
+				A8F3C13327C0672800EB343B /* HealthEntry.swift */,
+			);
+			path = Health;
+			sourceTree = "<group>";
+		};
+		A8BB624A27B9A61600A158A7 /* HealthKit */ = {
+			isa = PBXGroup;
+			children = (
+				A8BB624B27B9A62700A158A7 /* HKQueryExtensions.swift */,
+			);
+			path = HealthKit;
+			sourceTree = "<group>";
+		};
 		A8F4B735279F9DE1003BD34A /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
@@ -294,6 +327,7 @@
 		A8F4B73D279FB2B7003BD34A /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				A8BB624A27B9A61600A158A7 /* HealthKit */,
 				A834CC472773C80300596EF8 /* ViewExtensions */,
 			);
 			path = Extensions;
@@ -432,6 +466,7 @@
 			files = (
 				A834CC2B2770EFD700596EF8 /* Mood.swift in Sources */,
 				A834CC3A2771029D00596EF8 /* HistoryViewModel.swift in Sources */,
+				A8BB624E27B9B01A00A158A7 /* HealthCardView.swift in Sources */,
 				A834CC4B2773D5E700596EF8 /* HistoryDetailView.swift in Sources */,
 				A834CC382771012000596EF8 /* HistoryView.swift in Sources */,
 				A834CC012770E70300596EF8 /* ContentView.swift in Sources */,
@@ -439,15 +474,20 @@
 				A834CC492773C81300596EF8 /* Color+Hex.swift in Sources */,
 				A834CC412771681D00596EF8 /* AppColor.swift in Sources */,
 				A834CC4D2773D60500596EF8 /* HistoryRowView.swift in Sources */,
+				A8BB624927B9A4AB00A158A7 /* HealthDataType.swift in Sources */,
 				A834CC3D277113D600596EF8 /* SettingsView.swift in Sources */,
 				A8BB623927A10D5F00A158A7 /* Subscriptions.swift in Sources */,
 				A834CC342770F99600596EF8 /* MoodStore.swift in Sources */,
 				A8F4B737279F9DF7003BD34A /* DetentSheet.swift in Sources */,
 				A834CC3F27713B8600596EF8 /* NotificationsSettingsViewModel.swift in Sources */,
+				A8F3C13427C0672800EB343B /* HealthEntry.swift in Sources */,
+				A8BB624C27B9A62700A158A7 /* HKQueryExtensions.swift in Sources */,
 				A834CC2D2770EFEC00596EF8 /* MoodEditorViewModel.swift in Sources */,
 				A8BB624627B9916D00A158A7 /* HistoryEntry.swift in Sources */,
 				A834CC292770EB3000596EF8 /* MoodEdtiorView.swift in Sources */,
 				A8F4B73A279F9F8E003BD34A /* MudoView.swift in Sources */,
+				A8F3C13227C066CA00EB343B /* HealthStore.swift in Sources */,
+				A8F3C13627C074C700EB343B /* Measurement.swift in Sources */,
 				A834CBFF2770E70300596EF8 /* mudoApp.swift in Sources */,
 				A834CC462772573500596EF8 /* CapsuleButtonSyle.swift in Sources */,
 				A8F4B73C279F9F98003BD34A /* MudoViewModel.swift in Sources */,
@@ -616,6 +656,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = mudo/Info.plist;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Let us read your Apple Health data so you can compare it with your daily mood. The data never leaves your device.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -648,6 +689,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = mudo/Info.plist;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Let us read your Apple Health data so you can compare it with your daily mood. The data never leaves your device.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

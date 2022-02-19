@@ -12,6 +12,7 @@ struct SettingsView: View {
     @AppStorage("appColor") var appColor: AppColor = .default
     
     @StateObject var notificationsViewModel = NotificationsSettingsViewModel()
+    @Environment(\.dismiss) var dismiss
     
     var body: some View {
         NavigationView {
@@ -19,6 +20,15 @@ struct SettingsView: View {
                 notificationsSection
                 appSection
                 debugSection
+            }
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        dismiss()
+                    } label: {
+                        Image(systemName: "xmark.circle.fill")
+                    }
+                }
             }
             .navigationTitle("Settings")
         }
