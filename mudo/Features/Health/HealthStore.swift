@@ -20,7 +20,6 @@ class HealthStore {
     func requestPermissions() {
         let types = Set<HKObjectType>([
             .workoutType(),
-            .activitySummaryType(),
             HKQuantityType(.stepCount),
             HKQuantityType(.appleExerciseTime),
             HKQuantityType(.appleStandTime),
@@ -46,6 +45,37 @@ class HealthStore {
             .eraseToAnyPublisher()
     }
     
+    func workoutEntries(for date: Date) -> AnyPublisher<[WorkoutEntry], Never> {
+        let subject = PassthroughSubject<[WorkoutEntry], Never>()
+        let query = HKSampleQuery(
+            sampleType: .workoutType(),
+            predicate: HKQuery.predicateForSamples(within: date),
+            limit: HKObjectQueryNoLimit,
+            sortDescriptors: nil
+        ) { _, samples, _ in
+            guard let samples = samples else {
+                print("No workout samples for", date)
+                subject.send([])
+                return
+            }
+                
+            let entries = samples
+                .compactMap { $0 as? HKWorkout }
+                .map {
+                    WorkoutEntry(
+                        workoutName: $0.workoutActivityType.displayName,
+                        durationValue: $0.duration,
+                        durationMeasurement: .time(.minutes),
+                        energyValue: ($0.totalEnergyBurned?.doubleValue(for: .largeCalorie()) ?? 0),
+                        energyMeasurement: .calories)
+                }
+            subject.send(entries)
+        }
+        
+        hkHealthStore.execute(query)
+        return subject.eraseToAnyPublisher()
+    }
+    
     private func entry(for healthData: HealthDataType, on date: Date) -> Future<HealthEntry, Never> {
         let predicate = HKQuery.predicateForSamples(within: date)
     
@@ -66,7 +96,6 @@ class HealthStore {
                 promise(.success(entry))
             }
             
-            // todo: move out of future?
             self?.hkHealthStore.execute(query)
         }
     }

@@ -40,6 +40,10 @@
 		A8F3C13627C074C700EB343B /* Measurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F3C13527C074C700EB343B /* Measurement.swift */; };
 		A8F3C13827C1A29F00EB343B /* AppThemePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F3C13727C1A29E00EB343B /* AppThemePicker.swift */; };
 		A8F3C13A27C1A2BB00EB343B /* EnvironmentValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F3C13927C1A2BB00EB343B /* EnvironmentValues.swift */; };
+		A8F3C13C27C2C82800EB343B /* HKWorkoutActivityType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F3C13B27C2C82800EB343B /* HKWorkoutActivityType.swift */; };
+		A8F3C13E27C2C8B400EB343B /* WorkoutCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F3C13D27C2C8B400EB343B /* WorkoutCardView.swift */; };
+		A8F3C14027C2CDD000EB343B /* WorkoutEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F3C13F27C2CDD000EB343B /* WorkoutEntry.swift */; };
+		A8F3C14227C2D3B800EB343B /* HistoryDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F3C14127C2D3B800EB343B /* HistoryDetailViewModel.swift */; };
 		A8F4B737279F9DF7003BD34A /* DetentSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F4B736279F9DF7003BD34A /* DetentSheet.swift */; };
 		A8F4B73A279F9F8E003BD34A /* MudoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F4B739279F9F8E003BD34A /* MudoView.swift */; };
 		A8F4B73C279F9F98003BD34A /* MudoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F4B73B279F9F98003BD34A /* MudoViewModel.swift */; };
@@ -101,6 +105,10 @@
 		A8F3C13527C074C700EB343B /* Measurement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Measurement.swift; sourceTree = "<group>"; };
 		A8F3C13727C1A29E00EB343B /* AppThemePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppThemePicker.swift; sourceTree = "<group>"; };
 		A8F3C13927C1A2BB00EB343B /* EnvironmentValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentValues.swift; sourceTree = "<group>"; };
+		A8F3C13B27C2C82800EB343B /* HKWorkoutActivityType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HKWorkoutActivityType.swift; sourceTree = "<group>"; };
+		A8F3C13D27C2C8B400EB343B /* WorkoutCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCardView.swift; sourceTree = "<group>"; };
+		A8F3C13F27C2CDD000EB343B /* WorkoutEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutEntry.swift; sourceTree = "<group>"; };
+		A8F3C14127C2D3B800EB343B /* HistoryDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDetailViewModel.swift; sourceTree = "<group>"; };
 		A8F4B736279F9DF7003BD34A /* DetentSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetentSheet.swift; sourceTree = "<group>"; };
 		A8F4B739279F9F8E003BD34A /* MudoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MudoView.swift; sourceTree = "<group>"; };
 		A8F4B73B279F9F98003BD34A /* MudoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MudoViewModel.swift; sourceTree = "<group>"; };
@@ -227,6 +235,7 @@
 				A834CC4A2773D5E700596EF8 /* HistoryDetailView.swift */,
 				A834CC4C2773D60500596EF8 /* HistoryRowView.swift */,
 				A8BB624527B9916D00A158A7 /* HistoryEntry.swift */,
+				A8F3C14127C2D3B800EB343B /* HistoryDetailViewModel.swift */,
 			);
 			path = History;
 			sourceTree = "<group>";
@@ -301,6 +310,8 @@
 				A8BB624D27B9B01A00A158A7 /* HealthCardView.swift */,
 				A8F3C13127C066CA00EB343B /* HealthStore.swift */,
 				A8F3C13327C0672800EB343B /* HealthEntry.swift */,
+				A8F3C13D27C2C8B400EB343B /* WorkoutCardView.swift */,
+				A8F3C13F27C2CDD000EB343B /* WorkoutEntry.swift */,
 			);
 			path = Health;
 			sourceTree = "<group>";
@@ -309,6 +320,7 @@
 			isa = PBXGroup;
 			children = (
 				A8BB624B27B9A62700A158A7 /* HKQueryExtensions.swift */,
+				A8F3C13B27C2C82800EB343B /* HKWorkoutActivityType.swift */,
 			);
 			path = HealthKit;
 			sourceTree = "<group>";
@@ -483,6 +495,7 @@
 				A834CC4D2773D60500596EF8 /* HistoryRowView.swift in Sources */,
 				A8BB624927B9A4AB00A158A7 /* HealthDataType.swift in Sources */,
 				A834CC3D277113D600596EF8 /* SettingsView.swift in Sources */,
+				A8F3C13C27C2C82800EB343B /* HKWorkoutActivityType.swift in Sources */,
 				A8BB623927A10D5F00A158A7 /* Subscriptions.swift in Sources */,
 				A834CC342770F99600596EF8 /* MoodStore.swift in Sources */,
 				A8F4B737279F9DF7003BD34A /* DetentSheet.swift in Sources */,
@@ -490,10 +503,13 @@
 				A834CC3F27713B8600596EF8 /* NotificationsSettingsViewModel.swift in Sources */,
 				A8F3C13427C0672800EB343B /* HealthEntry.swift in Sources */,
 				A8BB624C27B9A62700A158A7 /* HKQueryExtensions.swift in Sources */,
+				A8F3C14227C2D3B800EB343B /* HistoryDetailViewModel.swift in Sources */,
 				A834CC2D2770EFEC00596EF8 /* MoodEditorViewModel.swift in Sources */,
 				A8BB624627B9916D00A158A7 /* HistoryEntry.swift in Sources */,
+				A8F3C13E27C2C8B400EB343B /* WorkoutCardView.swift in Sources */,
 				A834CC292770EB3000596EF8 /* MoodEdtiorView.swift in Sources */,
 				A8F4B73A279F9F8E003BD34A /* MudoView.swift in Sources */,
+				A8F3C14027C2CDD000EB343B /* WorkoutEntry.swift in Sources */,
 				A8F3C13227C066CA00EB343B /* HealthStore.swift in Sources */,
 				A8F3C13627C074C700EB343B /* Measurement.swift in Sources */,
 				A834CBFF2770E70300596EF8 /* mudoApp.swift in Sources */,

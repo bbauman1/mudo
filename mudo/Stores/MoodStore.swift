@@ -17,8 +17,16 @@ class MoodStore {
             .map { _ in UserDefaults.standard.logHistory }
             .eraseToAnyPublisher()
         
+        // trigger refresh when opening the app on a new day
+        // guard to guarantee new day or NavigationView will pop the view stack to the root view that was updated 🤷‍♂️
         let appWillForeground = NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)
-            .map { _ in UserDefaults.standard.logHistory }
+            .compactMap { _ -> LogHistory? in
+                guard let lastRecordedDate = UserDefaults.standard.logHistory.first?.date else {
+                    return nil
+                }
+                
+                return Calendar.current.isDateInToday(lastRecordedDate) ? nil : UserDefaults.standard.logHistory
+            }
             .eraseToAnyPublisher()
         
         return Publishers.Merge(logHistory, appWillForeground)

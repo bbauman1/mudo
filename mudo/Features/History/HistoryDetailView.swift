@@ -20,11 +20,27 @@ struct HistoryDetailView: View {
                     note
                 }
                 
-                ForEach(viewModel.healthEntries) {
-                    HealthCardView(dataType: $0.dataType, value: $0.value)
+                if !viewModel.workoutEntries.isEmpty {
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text("Workouts")
+                            .font(.system(size: 22, weight: .semibold, design: .rounded))
+                        ForEach(viewModel.workoutEntries) {
+                            WorkoutCardView(entry: $0)
+                        }
+                    }
                 }
                 
-                if viewModel.healthEntries.isEmpty {
+                if !viewModel.healthEntries.isEmpty {
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text("Overall stats")
+                            .font(.system(size: 22, weight: .semibold, design: .rounded))
+                        ForEach(viewModel.healthEntries) {
+                            HealthCardView(dataType: $0.dataType, value: $0.value)
+                        }
+                    }
+                }
+                
+                if viewModel.shouldShowEmptyState {
                     healthPermissionsView
                 }
             }
@@ -83,46 +99,5 @@ struct HistoryDetailView: View {
             RoundedRectangle(cornerRadius: 16, style: .continuous)
                 .fill(Color(.secondarySystemBackground))
         )
-    }
-}
-
-class HistoryDetailViewModel: ObservableObject {
-    
-    let entry: HistoryEntry
-    private let healthStore: HealthStore
-    
-    @Published var healthEntries: [HealthEntry] = []
-    
-    private var subscriptions = Subscriptions()
-    
-    init(entry: HistoryEntry, healthStore: HealthStore) {
-        self.entry = entry
-        self.healthStore = healthStore
-    }
-    
-    func onAppear() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-            self.healthStore.requestPermissions()
-        }
-        
-        bindHealthEntries()
-        
-        Timer.publish(every: 5, on: .main, in: .default)
-            .autoconnect()
-            .sink { [weak self] _ in self?.bindHealthEntries() }
-            .store(in: &subscriptions)
-    }
-    
-    func onDisappear() {
-        subscriptions.forEach { $0.cancel() }
-    }
-    
-    func bindHealthEntries() {
-        healthStore.entries(for: entry.date)
-            .map { $0.filter { $0.value > 0 }}
-            .map { $0.sorted(by: { $0.dataType.displayPriority < $1.dataType.displayPriority })}
-            .receive(on: DispatchQueue.main)
-            .sink { [weak self] in self?.healthEntries = $0 }
-            .store(in: &subscriptions)
     }
 }
