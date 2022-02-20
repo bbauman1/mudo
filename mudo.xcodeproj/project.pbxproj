@@ -38,6 +38,8 @@
 		A8F3C13227C066CA00EB343B /* HealthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F3C13127C066CA00EB343B /* HealthStore.swift */; };
 		A8F3C13427C0672800EB343B /* HealthEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F3C13327C0672800EB343B /* HealthEntry.swift */; };
 		A8F3C13627C074C700EB343B /* Measurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F3C13527C074C700EB343B /* Measurement.swift */; };
+		A8F3C13827C1A29F00EB343B /* AppThemePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F3C13727C1A29E00EB343B /* AppThemePicker.swift */; };
+		A8F3C13A27C1A2BB00EB343B /* EnvironmentValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F3C13927C1A2BB00EB343B /* EnvironmentValues.swift */; };
 		A8F4B737279F9DF7003BD34A /* DetentSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F4B736279F9DF7003BD34A /* DetentSheet.swift */; };
 		A8F4B73A279F9F8E003BD34A /* MudoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F4B739279F9F8E003BD34A /* MudoView.swift */; };
 		A8F4B73C279F9F98003BD34A /* MudoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F4B73B279F9F98003BD34A /* MudoViewModel.swift */; };
@@ -97,6 +99,8 @@
 		A8F3C13127C066CA00EB343B /* HealthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthStore.swift; sourceTree = "<group>"; };
 		A8F3C13327C0672800EB343B /* HealthEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthEntry.swift; sourceTree = "<group>"; };
 		A8F3C13527C074C700EB343B /* Measurement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Measurement.swift; sourceTree = "<group>"; };
+		A8F3C13727C1A29E00EB343B /* AppThemePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppThemePicker.swift; sourceTree = "<group>"; };
+		A8F3C13927C1A2BB00EB343B /* EnvironmentValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentValues.swift; sourceTree = "<group>"; };
 		A8F4B736279F9DF7003BD34A /* DetentSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetentSheet.swift; sourceTree = "<group>"; };
 		A8F4B739279F9F8E003BD34A /* MudoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MudoView.swift; sourceTree = "<group>"; };
 		A8F4B73B279F9F98003BD34A /* MudoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MudoViewModel.swift; sourceTree = "<group>"; };
@@ -252,6 +256,7 @@
 			children = (
 				A834CC3C277113D600596EF8 /* SettingsView.swift */,
 				A834CC3E27713B8600596EF8 /* NotificationsSettingsViewModel.swift */,
+				A8F3C13727C1A29E00EB343B /* AppThemePicker.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -268,6 +273,7 @@
 			isa = PBXGroup;
 			children = (
 				A834CC482773C81300596EF8 /* Color+Hex.swift */,
+				A8F3C13927C1A2BB00EB343B /* EnvironmentValues.swift */,
 			);
 			path = ViewExtensions;
 			sourceTree = "<group>";
@@ -473,12 +479,14 @@
 				A834CC362770FA5900596EF8 /* LogEntry.swift in Sources */,
 				A834CC492773C81300596EF8 /* Color+Hex.swift in Sources */,
 				A834CC412771681D00596EF8 /* AppColor.swift in Sources */,
+				A8F3C13827C1A29F00EB343B /* AppThemePicker.swift in Sources */,
 				A834CC4D2773D60500596EF8 /* HistoryRowView.swift in Sources */,
 				A8BB624927B9A4AB00A158A7 /* HealthDataType.swift in Sources */,
 				A834CC3D277113D600596EF8 /* SettingsView.swift in Sources */,
 				A8BB623927A10D5F00A158A7 /* Subscriptions.swift in Sources */,
 				A834CC342770F99600596EF8 /* MoodStore.swift in Sources */,
 				A8F4B737279F9DF7003BD34A /* DetentSheet.swift in Sources */,
+				A8F3C13A27C1A2BB00EB343B /* EnvironmentValues.swift in Sources */,
 				A834CC3F27713B8600596EF8 /* NotificationsSettingsViewModel.swift in Sources */,
 				A8F3C13427C0672800EB343B /* HealthEntry.swift in Sources */,
 				A8BB624C27B9A62700A158A7 /* HKQueryExtensions.swift in Sources */,

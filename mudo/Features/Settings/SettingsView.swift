@@ -9,10 +9,9 @@ import SwiftUI
 
 struct SettingsView: View {
     
-    @AppStorage("appColor") var appColor: AppColor = .default
-    
     @StateObject var notificationsViewModel = NotificationsSettingsViewModel()
     @Environment(\.dismiss) var dismiss
+    @Environment(\.appThemeColor) var appColor
     
     var body: some View {
         NavigationView {
@@ -21,6 +20,7 @@ struct SettingsView: View {
                 appSection
                 debugSection
             }
+            .id(appColor)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
@@ -47,20 +47,9 @@ struct SettingsView: View {
     }
     
     var appSection: some View {
-        Section(header: Text("App settings")) {
-            Picker(selection: $appColor) {
-                ForEach(AppColor.allCases, id: \.rawValue) { appColor in
-                    HStack {
-                        Circle()
-                            .fill(appColor.color)
-                            .frame(width: 20, height: 20)
-                        Text(appColor.rawValue.capitalized)
-                    }
-                    .tag(appColor)
-                }
-            } label: {
-                Text("App theme")
-            }
+        Section(header: Text("App theme")) {
+            AppThemePicker()
+                .padding()
         }
     }
 }

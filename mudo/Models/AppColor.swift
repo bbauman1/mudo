@@ -9,6 +9,13 @@ import Foundation
 import SwiftUI
 
 enum AppColor: String, CaseIterable, Codable {
+    
+    // new
+    case wildBlueYonder // BLUE
+    case redSalsa // RED
+    case tuscany // PALE RED
+    
+    // old-temp
     case red
     case green
     case blue
@@ -23,10 +30,16 @@ enum AppColor: String, CaseIterable, Codable {
     case brown
     case gray
     
-    static let `default`: AppColor = .blue
+    static let `default`: AppColor = .wildBlueYonder
     
     var color: Color {
         switch self {
+        case .wildBlueYonder:
+            return .init(hex: 0xA7BBEC)
+        case .redSalsa:
+            return .init(hex: 0xEF5B5B)
+        case .tuscany:
+            return .init(hex: 0xB79492)
         case .red:
             return .red
         case .green:

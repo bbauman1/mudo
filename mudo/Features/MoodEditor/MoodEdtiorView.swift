@@ -8,12 +8,11 @@
 import SwiftUI
 
 struct MoodEditorView: View {
-
-    @AppStorage("appColor") var appColor: AppColor = .default
     
     @ObservedObject var viewModel: MoodEditorViewModel
     
     @Environment(\.dismiss) var dismiss
+    @Environment(\.appThemeColor) var appColor
     
     @State var isNoteExpanded: Bool = false
     @FocusState private var isNoteFocused: Bool
@@ -183,9 +182,9 @@ struct MoodEditorView: View {
         }
         .buttonStyle(.bordered)
         .buttonBorderShape(.capsule)
-        .tint(appColor.color)
+        .tint(appColor)
         .overlay(viewModel.mood == mood
-                 ? Capsule().stroke(appColor.color, lineWidth: 2)
+                 ? Capsule().stroke(appColor, lineWidth: 2)
                  : nil)
         .scaleEffect(viewModel.mood == mood ? 1.1 : 1)
     }

@@ -13,6 +13,7 @@ struct ContentView: View {
     @AppStorage("appColor") var appColor: AppColor = .default
     @State var isSplashScreenFinished: Bool = false
     @Environment(\.colorScheme) var colorScheme
+    @Environment(\.appThemeColor) var appThemeColor
     
     let viewModel = MudoViewModel(
         moodStore: MoodStore(),
@@ -22,6 +23,7 @@ struct ContentView: View {
     var body: some View {
         if isSplashScreenFinished {
             MudoView(viewModel: viewModel)
+                .environment(\.appThemeColor, appColor.color)
                 .accentColor(appColor.color)
                 .tint(appColor.color)
         } else {

@@ -13,6 +13,7 @@ struct MudoView: View {
     @ObservedObject var viewModel: MudoViewModel
     @State var isSettingsPresented: Bool = false
     @State var isMoodEditorPresented: Bool = false
+    @Environment(\.appThemeColor) var appColor
     
     var body: some View {
         NavigationView {
@@ -22,6 +23,8 @@ struct MudoView: View {
                 }
                 .sheet(isPresented: $isSettingsPresented) {
                     SettingsView()
+                        .accentColor(appColor)
+                        .tint(appColor)
                 }
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
