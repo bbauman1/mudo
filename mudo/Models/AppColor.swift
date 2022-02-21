@@ -30,7 +30,7 @@ enum AppColor: String, CaseIterable, Codable {
     case brown
     case gray
     
-    static let `default`: AppColor = .wildBlueYonder
+    static let `default`: AppColor = .teal
     
     var color: Color {
         switch self {

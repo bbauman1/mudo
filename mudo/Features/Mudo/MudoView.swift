@@ -35,7 +35,7 @@ struct MudoView: View {
                         }
                     }
                 }
-                .navigationTitle("Mudo")
+                .navigationTitle(viewModel.state == .empty ? "" : "Mudo")                
         }
         
     }
