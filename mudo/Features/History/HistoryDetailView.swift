@@ -32,8 +32,10 @@ struct HistoryDetailView: View {
                 
                 if !viewModel.healthEntries.isEmpty {
                     VStack(alignment: .leading, spacing: 4) {
-                        Text("Overall stats")
-                            .font(.system(size: 22, weight: .semibold, design: .rounded))
+                        if !viewModel.workoutEntries.isEmpty {
+                            Text("Overall stats")
+                                .font(.system(size: 22, weight: .semibold, design: .rounded))
+                        }
                         ForEach(viewModel.healthEntries) {
                             HealthCardView(dataType: $0.dataType, value: $0.value)
                         }
