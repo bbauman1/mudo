@@ -48,23 +48,16 @@ struct MudoView: View {
             listView
         }
     }
-    
+
     var emptyView: some View {
         Button {
             isMoodEditorPresented = true
         } label: {
-            VStack {
-                Text("No moods recorded yet!")
-                Text("Let's fix that")
-                Image(systemName: "record.circle")
-                    .resizable()
-                    .renderingMode(.template)
-                    .foregroundColor(.accentColor)
-                    .frame(width: 125, height: 125)
-            }
-            .font(.system(size: 24, weight: .semibold, design: .rounded))
-            .multilineTextAlignment(.center)
+            Text("record your first mood")
+                .font(.system(size: 18, weight: .semibold, design: .rounded))
         }
+        .buttonStyle(.borderedProminent)
+        .buttonBorderShape(.capsule)
     }
     
     var listView: some View {
