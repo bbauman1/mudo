@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1174B88027DD6930003F790C /* MudoEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1174B87F27DD6930003F790C /* MudoEmptyView.swift */; };
 		A834CBFF2770E70300596EF8 /* mudoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A834CBFE2770E70300596EF8 /* mudoApp.swift */; };
 		A834CC012770E70300596EF8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A834CC002770E70300596EF8 /* ContentView.swift */; };
 		A834CC032770E70A00596EF8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A834CC022770E70A00596EF8 /* Assets.xcassets */; };
@@ -24,7 +25,6 @@
 		A834CC3D277113D600596EF8 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A834CC3C277113D600596EF8 /* SettingsView.swift */; };
 		A834CC3F27713B8600596EF8 /* NotificationsSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A834CC3E27713B8600596EF8 /* NotificationsSettingsViewModel.swift */; };
 		A834CC412771681D00596EF8 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A834CC402771681D00596EF8 /* AppColor.swift */; };
-		A834CC462772573500596EF8 /* CapsuleButtonSyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A834CC452772573500596EF8 /* CapsuleButtonSyle.swift */; };
 		A834CC492773C81300596EF8 /* Color+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = A834CC482773C81300596EF8 /* Color+Hex.swift */; };
 		A834CC4B2773D5E700596EF8 /* HistoryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A834CC4A2773D5E700596EF8 /* HistoryDetailView.swift */; };
 		A834CC4D2773D60500596EF8 /* HistoryRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A834CC4C2773D60500596EF8 /* HistoryRowView.swift */; };
@@ -44,7 +44,6 @@
 		A8F3C13E27C2C8B400EB343B /* WorkoutCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F3C13D27C2C8B400EB343B /* WorkoutCardView.swift */; };
 		A8F3C14027C2CDD000EB343B /* WorkoutEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F3C13F27C2CDD000EB343B /* WorkoutEntry.swift */; };
 		A8F3C14227C2D3B800EB343B /* HistoryDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F3C14127C2D3B800EB343B /* HistoryDetailViewModel.swift */; };
-		A8F4B737279F9DF7003BD34A /* DetentSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F4B736279F9DF7003BD34A /* DetentSheet.swift */; };
 		A8F4B73A279F9F8E003BD34A /* MudoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F4B739279F9F8E003BD34A /* MudoView.swift */; };
 		A8F4B73C279F9F98003BD34A /* MudoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F4B73B279F9F98003BD34A /* MudoViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -67,6 +66,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1174B87F27DD6930003F790C /* MudoEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MudoEmptyView.swift; sourceTree = "<group>"; };
 		A834CBFB2770E70300596EF8 /* mudo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mudo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A834CBFE2770E70300596EF8 /* mudoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mudoApp.swift; sourceTree = "<group>"; };
 		A834CC002770E70300596EF8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -87,7 +87,6 @@
 		A834CC3C277113D600596EF8 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		A834CC3E27713B8600596EF8 /* NotificationsSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsSettingsViewModel.swift; sourceTree = "<group>"; };
 		A834CC402771681D00596EF8 /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
-		A834CC452772573500596EF8 /* CapsuleButtonSyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleButtonSyle.swift; sourceTree = "<group>"; };
 		A834CC482773C81300596EF8 /* Color+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Hex.swift"; sourceTree = "<group>"; };
 		A834CC4A2773D5E700596EF8 /* HistoryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDetailView.swift; sourceTree = "<group>"; };
 		A834CC4C2773D60500596EF8 /* HistoryRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryRowView.swift; sourceTree = "<group>"; };
@@ -109,7 +108,6 @@
 		A8F3C13D27C2C8B400EB343B /* WorkoutCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCardView.swift; sourceTree = "<group>"; };
 		A8F3C13F27C2CDD000EB343B /* WorkoutEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutEntry.swift; sourceTree = "<group>"; };
 		A8F3C14127C2D3B800EB343B /* HistoryDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDetailViewModel.swift; sourceTree = "<group>"; };
-		A8F4B736279F9DF7003BD34A /* DetentSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetentSheet.swift; sourceTree = "<group>"; };
 		A8F4B739279F9F8E003BD34A /* MudoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MudoView.swift; sourceTree = "<group>"; };
 		A8F4B73B279F9F98003BD34A /* MudoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MudoViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -168,8 +166,6 @@
 				A8BB623F27A265AE00A158A7 /* Info.plist */,
 				A8BB623A27A262B400A158A7 /* Fonts */,
 				A8F4B73D279FB2B7003BD34A /* Extensions */,
-				A8F4B735279F9DE1003BD34A /* Dependencies */,
-				A834CC422772562C00596EF8 /* Styles */,
 				A834CC322770F98300596EF8 /* Stores */,
 				A834CC312770F97E00596EF8 /* Models */,
 				A834CC2E2770F95800596EF8 /* Features */,
@@ -270,14 +266,6 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
-		A834CC422772562C00596EF8 /* Styles */ = {
-			isa = PBXGroup;
-			children = (
-				A834CC452772573500596EF8 /* CapsuleButtonSyle.swift */,
-			);
-			path = Styles;
-			sourceTree = "<group>";
-		};
 		A834CC472773C80300596EF8 /* ViewExtensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -325,19 +313,12 @@
 			path = HealthKit;
 			sourceTree = "<group>";
 		};
-		A8F4B735279F9DE1003BD34A /* Dependencies */ = {
-			isa = PBXGroup;
-			children = (
-				A8F4B736279F9DF7003BD34A /* DetentSheet.swift */,
-			);
-			path = Dependencies;
-			sourceTree = "<group>";
-		};
 		A8F4B738279F9F84003BD34A /* Mudo */ = {
 			isa = PBXGroup;
 			children = (
 				A8F4B739279F9F8E003BD34A /* MudoView.swift */,
 				A8F4B73B279F9F98003BD34A /* MudoViewModel.swift */,
+				1174B87F27DD6930003F790C /* MudoEmptyView.swift */,
 			);
 			path = Mudo;
 			sourceTree = "<group>";
@@ -495,10 +476,10 @@
 				A834CC4D2773D60500596EF8 /* HistoryRowView.swift in Sources */,
 				A8BB624927B9A4AB00A158A7 /* HealthDataType.swift in Sources */,
 				A834CC3D277113D600596EF8 /* SettingsView.swift in Sources */,
+				1174B88027DD6930003F790C /* MudoEmptyView.swift in Sources */,
 				A8F3C13C27C2C82800EB343B /* HKWorkoutActivityType.swift in Sources */,
 				A8BB623927A10D5F00A158A7 /* Subscriptions.swift in Sources */,
 				A834CC342770F99600596EF8 /* MoodStore.swift in Sources */,
-				A8F4B737279F9DF7003BD34A /* DetentSheet.swift in Sources */,
 				A8F3C13A27C1A2BB00EB343B /* EnvironmentValues.swift in Sources */,
 				A834CC3F27713B8600596EF8 /* NotificationsSettingsViewModel.swift in Sources */,
 				A8F3C13427C0672800EB343B /* HealthEntry.swift in Sources */,
@@ -513,7 +494,6 @@
 				A8F3C13227C066CA00EB343B /* HealthStore.swift in Sources */,
 				A8F3C13627C074C700EB343B /* Measurement.swift in Sources */,
 				A834CBFF2770E70300596EF8 /* mudoApp.swift in Sources */,
-				A834CC462772573500596EF8 /* CapsuleButtonSyle.swift in Sources */,
 				A8F4B73C279F9F98003BD34A /* MudoViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -28,10 +28,14 @@ struct MudoView: View {
                 }
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
-                        Button {
-                            isSettingsPresented = true
-                        } label: {
-                            Image(systemName: "gearshape")
+                        if viewModel.state == .populated {
+                            Button {
+                                isSettingsPresented = true
+                            } label: {
+                                Image(systemName: "gearshape")
+                            }
+                        } else {
+                            EmptyView()
                         }
                     }
                 }
@@ -50,14 +54,9 @@ struct MudoView: View {
     }
 
     var emptyView: some View {
-        Button {
+        MudoEmptyView {
             isMoodEditorPresented = true
-        } label: {
-            Text("record your first mood")
-                .font(.system(size: 18, weight: .semibold, design: .rounded))
         }
-        .buttonStyle(.borderedProminent)
-        .buttonBorderShape(.capsule)
     }
     
     var listView: some View {
