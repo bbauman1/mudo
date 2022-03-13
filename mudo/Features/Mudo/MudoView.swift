@@ -61,32 +61,22 @@ struct MudoView: View {
     
     var listView: some View {
         List {
-            todaySection
-            historySection
+            HistoryView(viewModel: viewModel.makeHistoryViewModel())
         }
-        .listStyle(.insetGrouped)
-    }
-    
-    var todaySection: some View {
-        Section {
+        .safeAreaInset(edge: .bottom, content: {
             Button {
                 isMoodEditorPresented = true
             } label: {
-                Text("Edit todays mood")
+                Text(viewModel.recordButtonText)
+                    .font(.system(size: 16, weight: .semibold, design: .rounded))
+                    .frame(maxWidth: .infinity)
             }
-
-        } header: {
-            Text("Today")
-        }
-        .headerProminence(.increased)
-    }
-    
-    var historySection: some View {
-        Section {
-            HistoryView(viewModel: viewModel.makeHistoryViewModel())
-        } header: {
-            Text("History")
-        }
-        .headerProminence(.increased)
+            .buttonStyle(.borderedProminent)
+            .buttonBorderShape(.capsule)
+            .controlSize(.large)
+            .padding(.horizontal)
+            .padding(.horizontal)
+        })
+        .listStyle(.insetGrouped)
     }
 }

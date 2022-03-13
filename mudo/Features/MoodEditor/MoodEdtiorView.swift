@@ -107,6 +107,7 @@ struct MoodEditorView: View {
             dismiss()
         } label: {
             Text("Save mood")
+                .font(.system(size: 16, weight: .semibold, design: .rounded))
                 .frame(maxWidth: .infinity)
         }
         .buttonStyle(.borderedProminent)

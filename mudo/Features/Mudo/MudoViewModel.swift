@@ -10,6 +10,7 @@ import Foundation
 class MudoViewModel: ObservableObject {
     
     @Published var state: State = .empty
+    @Published var recordButtonText: String = ""
     
     private let moodStore: MoodStore
     private let healthStore: HealthStore
@@ -21,11 +22,12 @@ class MudoViewModel: ObservableObject {
         self.healthStore = healthStore
         
         moodStore.history
-            .map(\.isEmpty)
-            .sink { [weak self] isEmpty in
-                self?.state = isEmpty ? .empty : .populated
-            }
-            .store(in: &subscriptions)
+            .map { $0.isEmpty ? State.empty : .populated }
+            .assign(to: &$state)
+        
+        moodStore.isTodayRecorded
+            .map { $0 ? "Edit todays mood" : "Record todays mood" }
+            .assign(to: &$recordButtonText)
     }
     
     func makeMoodEditorViewModel() -> MoodEditorViewModel {

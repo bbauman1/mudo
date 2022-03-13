@@ -35,7 +35,7 @@ class MoodStore {
     
     var isTodayRecorded: AnyPublisher<Bool, Never> {
         todaysEntry
-            .map { $0 == nil }
+            .map { $0 != nil }
             .eraseToAnyPublisher()
     }
     

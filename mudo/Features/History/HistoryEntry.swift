@@ -18,7 +18,17 @@ struct HistoryEntry: Identifiable {
     init(from logEntry: LogEntry) {
         self.mood = logEntry.mood
         self.dateString = {
-            let date = logEntry.date.formatted(.dateTime.month(.wide).day(.defaultDigits))
+            let date: String = {
+                guard !Calendar.current.isDateInToday(logEntry.date) else {
+                    return "Today"
+                }
+                
+                guard !Calendar.current.isDateInYesterday(logEntry.date) else {
+                    return "Yesterday"
+                }
+                
+                return logEntry.date.formatted(.dateTime.month(.wide).day(.defaultDigits))
+            }()
             let time = logEntry.date.formatted(.dateTime.hour(.defaultDigits(amPM: .abbreviated)).minute(.defaultDigits))
             return date + " • " + time
         }()
