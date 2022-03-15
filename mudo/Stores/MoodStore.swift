@@ -100,37 +100,6 @@ extension MoodStore {
         UserDefaults.standard.logHistory = history
     }
     
-    func annieBackup() {
-        let data: [(String, Mood, String)] = [
-            ("2021-12-21 14:59:00", .energized, "Teddy got new ski pants at evo today"),
-            ("2021-12-22 20:25:00", .energized, "Brett is a great boyfriend"),
-            ("2021-12-23 08:10:00", .anxious, "Skiing at crystal. Anxious because I'm not driving"),
-            ("2021-12-25 08:35:00", .energized, "Drove all the way from seattle to bend in deep snow"),
-            ("2021-12-26 08:36:00", .tired, "Tired - went for one run at Back then left because it was a blizzard"),
-            ("2022-01-24 23:00:00", .anxious, "Frantic - made a lot of slides about tape"),
-        ]
-        
-        let strategy = Date.ISO8601FormatStyle()
-            .year()
-            .month()
-            .day()
-            .dateSeparator(.dash)
-            .dateTimeSeparator(.space)
-            .time(includingFractionalSeconds: false)
-            .timeSeparator(.colon)
-        
-        var entries: [LogEntry] = []
-        for datum in data.reversed() {
-            guard let date = try? Date(datum.0, strategy: strategy) else {
-                continue
-            }
-            let entry = LogEntry(date: date, mood: datum.1, note: datum.2)
-            entries.append(entry)
-        }
-        
-        UserDefaults.standard.logHistory = entries
-    }
-    
     func removeAll() {
         UserDefaults.standard.logHistory = []
     }
