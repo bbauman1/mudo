@@ -12,13 +12,12 @@ struct MudoView: View {
     
     @ObservedObject var viewModel: MudoViewModel
     @State var isSettingsPresented: Bool = false
-    @State var isMoodEditorPresented: Bool = false
     @Environment(\.appThemeColor) var appColor
     
     var body: some View {
         NavigationView {
             statefulView
-                .sheet(isPresented: $isMoodEditorPresented) {
+                .sheet(isPresented: $viewModel.isMoodEditorPresented) {
                     MoodEditorView(viewModel: viewModel.makeMoodEditorViewModel())
                 }
                 .sheet(isPresented: $isSettingsPresented) {
@@ -39,9 +38,10 @@ struct MudoView: View {
                         }
                     }
                 }
-                .navigationTitle(viewModel.state == .empty ? "" : "Mudo")                
+                .navigationTitle(viewModel.state == .empty ? "" : "Mudo")
+                .onAppear(perform: viewModel.onAppear)
         }
-        
+        .navigationViewStyle(.stack)
     }
     
     @ViewBuilder var statefulView: some View {
@@ -55,7 +55,8 @@ struct MudoView: View {
 
     var emptyView: some View {
         MudoEmptyView {
-            isMoodEditorPresented = true
+            UIImpactFeedbackGenerator().impactOccurred(intensity: 0.75)
+            viewModel.isMoodEditorPresented = true
         }
     }
     
@@ -65,7 +66,8 @@ struct MudoView: View {
         }
         .safeAreaInset(edge: .bottom, content: {
             Button {
-                isMoodEditorPresented = true
+                UIImpactFeedbackGenerator().impactOccurred(intensity: 0.75)
+                viewModel.isMoodEditorPresented = true
             } label: {
                 Text(viewModel.recordButtonText)
                     .font(.system(size: 16, weight: .semibold, design: .rounded))
@@ -76,6 +78,7 @@ struct MudoView: View {
             .controlSize(.large)
             .padding(.horizontal)
             .padding(.horizontal)
+            .padding(.bottom)
         })
         .listStyle(.insetGrouped)
     }

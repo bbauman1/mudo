@@ -15,6 +15,8 @@ struct MudoEmptyView: View {
     
     var body: some View {
         ZStack {
+            Color.black.edgesIgnoringSafeArea(.all)
+            
             ForEach(0..<3) { _ in
                 Rectangle()
                     .fill(

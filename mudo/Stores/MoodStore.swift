@@ -62,7 +62,6 @@ class MoodStore {
         var history = UserDefaults.standard.logHistory
         
         if let previousEntry = history.first, Calendar.current.isDateInToday(previousEntry.date) {
-            print("Error: Attempted to save mood for a day that is already recorded.")
             history.removeFirst()
         }
         
