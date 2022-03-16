@@ -39,9 +39,9 @@ struct MudoView: View {
                     }
                 }
                 .navigationTitle(viewModel.state == .empty ? "" : "Mudo")
-                .onAppear(perform: viewModel.onAppear)
         }
         .navigationViewStyle(.stack)
+        .onAppear(perform: viewModel.onAppear)
     }
     
     @ViewBuilder var statefulView: some View {
