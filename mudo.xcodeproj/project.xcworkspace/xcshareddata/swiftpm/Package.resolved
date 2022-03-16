@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Mixpanel",
+        "repositoryURL": "https://github.com/mixpanel/mixpanel-swift",
+        "state": {
+          "branch": null,
+          "revision": "c20637be10e744478402e1fda65374d0a4b205f6",
+          "version": "3.1.6"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

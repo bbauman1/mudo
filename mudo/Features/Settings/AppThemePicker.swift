@@ -68,6 +68,7 @@ struct AppThemePicker: View  {
         Button {
             self.appColor = appColor
             feedbackGenerator.impactOccurred(intensity: 1.0)
+            Analytics.track(.setAppColor(appColor))
         } label: {
             ZStack {
                 Circle()

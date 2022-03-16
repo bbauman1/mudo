@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  RootView.swift
 //  mudo
 //
 //  Created by Brett Bauman on 12/20/21.
@@ -8,7 +8,7 @@
 import HealthKit
 import SwiftUI
 
-struct ContentView: View {
+struct RootView: View {
     
     @AppStorage("appColor") var appColor: AppColor = .default
     

@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import SwiftUI
+import Mixpanel
 
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
@@ -18,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil
     ) -> Bool {
         UNUserNotificationCenter.current().delegate = self
+        Analytics.initialize()
         return true
     }
 }
@@ -30,9 +32,4 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     ) async {
         deeplinkRouter?.isMoodEditorPresented = true
     }
-}
-
-class DeeplinkRouter: ObservableObject {
-    
-    @Published var isMoodEditorPresented = false
 }

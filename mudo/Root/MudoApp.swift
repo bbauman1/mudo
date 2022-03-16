@@ -20,7 +20,7 @@ struct MudoApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView(viewModel: viewModel)
+            RootView(viewModel: viewModel)
                 .onAppear { appDelegate.deeplinkRouter = viewModel.deeplinkRouter }
         }
     }

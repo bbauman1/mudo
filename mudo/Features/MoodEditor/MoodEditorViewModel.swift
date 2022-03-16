@@ -42,6 +42,7 @@ class MoodEditorViewModel: ObservableObject {
         guard let mood = mood else { return }
         feedbackGenerator.impactOccurred(intensity: 0.75)
         moodStore.store(mood, note: note)
+        Analytics.track(.recordedMood(mood))
         DispatchQueue.main.async {
             self.mood = nil
             self.note = ""

@@ -7,10 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1129584027E195060065E76E /* Mixpanel in Frameworks */ = {isa = PBXBuildFile; productRef = 1129583F27E195060065E76E /* Mixpanel */; };
+		1129584227E1993E0065E76E /* Analytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1129584127E1993E0065E76E /* Analytics.swift */; };
+		1129584627E199B30065E76E /* DeeplinkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1129584527E199B30065E76E /* DeeplinkRouter.swift */; };
 		1174B88027DD6930003F790C /* MudoEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1174B87F27DD6930003F790C /* MudoEmptyView.swift */; };
 		1174B88227DD84EA003F790C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1174B88127DD84EA003F790C /* AppDelegate.swift */; };
 		A834CBFF2770E70300596EF8 /* MudoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A834CBFE2770E70300596EF8 /* MudoApp.swift */; };
-		A834CC012770E70300596EF8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A834CC002770E70300596EF8 /* ContentView.swift */; };
+		A834CC012770E70300596EF8 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A834CC002770E70300596EF8 /* RootView.swift */; };
 		A834CC032770E70A00596EF8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A834CC022770E70A00596EF8 /* Assets.xcassets */; };
 		A834CC062770E70B00596EF8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A834CC052770E70B00596EF8 /* Preview Assets.xcassets */; };
 		A834CC102770E70C00596EF8 /* mudoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A834CC0F2770E70C00596EF8 /* mudoTests.swift */; };
@@ -67,11 +70,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1129584127E1993E0065E76E /* Analytics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Analytics.swift; sourceTree = "<group>"; };
+		1129584527E199B30065E76E /* DeeplinkRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeeplinkRouter.swift; sourceTree = "<group>"; };
 		1174B87F27DD6930003F790C /* MudoEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MudoEmptyView.swift; sourceTree = "<group>"; };
 		1174B88127DD84EA003F790C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A834CBFB2770E70300596EF8 /* mudo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mudo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A834CBFE2770E70300596EF8 /* MudoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MudoApp.swift; sourceTree = "<group>"; };
-		A834CC002770E70300596EF8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A834CC002770E70300596EF8 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		A834CC022770E70A00596EF8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A834CC052770E70B00596EF8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A834CC0B2770E70C00596EF8 /* mudoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mudoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -119,6 +124,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1129584027E195060065E76E /* Mixpanel in Frameworks */,
 				A8BB624427B98F8300A158A7 /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -140,6 +146,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1129584327E199760065E76E /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				1129584127E1993E0065E76E /* Analytics.swift */,
+			);
+			path = Analytics;
+			sourceTree = "<group>";
+		};
+		1129584427E1998D0065E76E /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				1174B88127DD84EA003F790C /* AppDelegate.swift */,
+				A834CC002770E70300596EF8 /* RootView.swift */,
+				A834CBFE2770E70300596EF8 /* MudoApp.swift */,
+				1129584527E199B30065E76E /* DeeplinkRouter.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
 		A834CBF22770E70300596EF8 = {
 			isa = PBXGroup;
 			children = (
@@ -166,15 +191,14 @@
 			children = (
 				A8BB624127B98F8200A158A7 /* mudo.entitlements */,
 				A8BB623F27A265AE00A158A7 /* Info.plist */,
-				1174B88127DD84EA003F790C /* AppDelegate.swift */,
-				A834CC002770E70300596EF8 /* ContentView.swift */,
-				A834CBFE2770E70300596EF8 /* MudoApp.swift */,
 				A834CC022770E70A00596EF8 /* Assets.xcassets */,
+				1129584327E199760065E76E /* Analytics */,
 				A8F4B73D279FB2B7003BD34A /* Extensions */,
 				A834CC2E2770F95800596EF8 /* Features */,
 				A8BB623A27A262B400A158A7 /* Fonts */,
 				A834CC312770F97E00596EF8 /* Models */,
 				A834CC042770E70B00596EF8 /* Preview Content */,
+				1129584427E1998D0065E76E /* Root */,
 				A834CC322770F98300596EF8 /* Stores */,
 			);
 			path = mudo;
@@ -351,6 +375,9 @@
 			dependencies = (
 			);
 			name = mudo;
+			packageProductDependencies = (
+				1129583F27E195060065E76E /* Mixpanel */,
+			);
 			productName = mudo;
 			productReference = A834CBFB2770E70300596EF8 /* mudo.app */;
 			productType = "com.apple.product-type.application";
@@ -423,6 +450,9 @@
 				Base,
 			);
 			mainGroup = A834CBF22770E70300596EF8;
+			packageReferences = (
+				1129583E27E195060065E76E /* XCRemoteSwiftPackageReference "mixpanel-swift" */,
+			);
 			productRefGroup = A834CBFC2770E70300596EF8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -472,7 +502,7 @@
 				A8BB624E27B9B01A00A158A7 /* HealthCardView.swift in Sources */,
 				A834CC4B2773D5E700596EF8 /* HistoryDetailView.swift in Sources */,
 				A834CC382771012000596EF8 /* HistoryView.swift in Sources */,
-				A834CC012770E70300596EF8 /* ContentView.swift in Sources */,
+				A834CC012770E70300596EF8 /* RootView.swift in Sources */,
 				A834CC362770FA5900596EF8 /* LogEntry.swift in Sources */,
 				A834CC492773C81300596EF8 /* Color+Hex.swift in Sources */,
 				A834CC412771681D00596EF8 /* AppColor.swift in Sources */,
@@ -482,6 +512,7 @@
 				A834CC3D277113D600596EF8 /* SettingsView.swift in Sources */,
 				1174B88027DD6930003F790C /* MudoEmptyView.swift in Sources */,
 				A8F3C13C27C2C82800EB343B /* HKWorkoutActivityType.swift in Sources */,
+				1129584227E1993E0065E76E /* Analytics.swift in Sources */,
 				A8BB623927A10D5F00A158A7 /* Subscriptions.swift in Sources */,
 				A834CC342770F99600596EF8 /* MoodStore.swift in Sources */,
 				A8F3C13A27C1A2BB00EB343B /* EnvironmentValues.swift in Sources */,
@@ -497,6 +528,7 @@
 				A8F3C14027C2CDD000EB343B /* WorkoutEntry.swift in Sources */,
 				A8F3C13227C066CA00EB343B /* HealthStore.swift in Sources */,
 				A8F3C13627C074C700EB343B /* Measurement.swift in Sources */,
+				1129584627E199B30065E76E /* DeeplinkRouter.swift in Sources */,
 				A834CBFF2770E70300596EF8 /* MudoApp.swift in Sources */,
 				A8F4B73C279F9F98003BD34A /* MudoViewModel.swift in Sources */,
 			);
@@ -855,6 +887,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1129583E27E195060065E76E /* XCRemoteSwiftPackageReference "mixpanel-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mixpanel/mixpanel-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.1.6;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1129583F27E195060065E76E /* Mixpanel */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1129583E27E195060065E76E /* XCRemoteSwiftPackageReference "mixpanel-swift" */;
+			productName = Mixpanel;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A834CBF32770E70300596EF8 /* Project object */;
 }
