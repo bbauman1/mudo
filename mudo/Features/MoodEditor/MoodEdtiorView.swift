@@ -25,23 +25,18 @@ struct MoodEditorView: View {
     }
     
     var recordView: some View {
-        ScrollView {
-            ScrollViewReader { proxy in
-                VStack(spacing: 24) {
-                    titleText
-                    wrappingMoodButtons
-                    noteView
-                    submitButton
-                    scrollAnchor
-                }
-                .padding([.horizontal, .top], 24)
-                .onReceive(viewModel.scrollToTop) { _ in
-                    withAnimation {
-                        proxy.scrollTo(scrollAnchorId)
-                    }
-                }
+        VStack(spacing: 24) {
+            titleText
+            ScrollView(showsIndicators: false) {
+                wrappingMoodButtons
+                    .padding(.horizontal, 24)
             }
+            .padding(.horizontal, -24)
+            noteView
+            submitButton
+            scrollAnchor
         }
+        .padding([.horizontal, .top], 24)
     }
     
     var titleText: some View {
@@ -127,7 +122,7 @@ struct MoodEditorView: View {
     // todo: move to separate file
 
     @State private var totalHeight = CGFloat.zero
-    let moods = Mood.allCases
+    let moods = Mood.displayCases
 
     var wrappingMoodButtons: some View {
         VStack {
@@ -143,7 +138,7 @@ struct MoodEditorView: View {
         var height = CGFloat.zero
 
         return ZStack(alignment: .topLeading) {
-            ForEach(Mood.allCases, id: \.self) { mood in
+            ForEach(Mood.displayCases, id: \.self) { mood in
                 self.item(for: mood)
                     .padding([.horizontal, .vertical], 8)
                     .alignmentGuide(.leading, computeValue: { d in
@@ -175,7 +170,7 @@ struct MoodEditorView: View {
             viewModel.selectMood(mood)
         } label: {
             Label {
-                Text(mood.displayName)
+                Text(mood.displayName.lowercased())
             } icon: {
                 Text(mood.emoji)
                     .font(.system(size: 28))
