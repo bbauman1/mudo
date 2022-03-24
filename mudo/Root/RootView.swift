@@ -48,7 +48,7 @@ struct RootView: View {
                 .font(.custom("Takeover", size: 64))
                 .foregroundColor(appColor.color)
                 .onAppear {
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                         withAnimation {
                             isSplashScreenFinished = true
                         }
