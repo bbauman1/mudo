@@ -47,7 +47,11 @@ struct HistoryDetailView: View {
                 }
                 
                 if viewModel.shouldShowEmptyState {
-                    healthPermissionsView
+                    healthPermissionsEmptyStateView
+                }
+                
+                if viewModel.shouldShowPermissionsPrompt {
+                    healthPermissionsPromptView
                 }
             }
             .padding(.horizontal, 16)
@@ -82,7 +86,7 @@ struct HistoryDetailView: View {
         )
     }
     
-    var healthPermissionsView: some View {
+    var healthPermissionsEmptyStateView: some View {
         VStack(alignment: .leading) {
             Text("No Apple Health data found for this day. Double check that your Apple Health permissions are enabled in the Health app. Health > Sharing tab > Apps > mudo")
                 .font(.system(.callout, design: .rounded))
@@ -92,6 +96,28 @@ struct HistoryDetailView: View {
                     if let url = URL(string: "x-apple-health://sources") {
                         UIApplication.shared.open(url, options: [:], completionHandler: nil)
                     }
+                }
+                .buttonStyle(.borderedProminent)
+                .buttonBorderShape(.capsule)
+                Spacer()
+            }
+        }
+        .frame(maxWidth: .infinity)
+        .padding()
+        .background(
+            RoundedRectangle(cornerRadius: 16, style: .continuous)
+                .fill(Color(.secondarySystemBackground))
+        )
+    }
+    
+    var healthPermissionsPromptView: some View {
+        VStack(alignment: .leading) {
+            Text("Allow Health permissions to see your daily health data alongside your mood")
+                .font(.system(.callout, design: .rounded))
+            HStack {
+                Spacer()
+                Button("Show Health data") {
+                    viewModel.requestInitialPermissions()
                 }
                 .buttonStyle(.borderedProminent)
                 .buttonBorderShape(.capsule)

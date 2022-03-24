@@ -36,7 +36,7 @@ struct RootView: View {
     
     var splashScreen: some View {
         ZStack {
-            if colorScheme == .dark {
+            if colorScheme == .dark || viewModel.state == .empty {
                 Color.black
                     .ignoresSafeArea()
             } else {
@@ -46,9 +46,9 @@ struct RootView: View {
             
             Text("mudo")
                 .font(.custom("Takeover", size: 64))
-                .foregroundColor(appColor.color)
+                .foregroundColor(viewModel.state == .empty ? Color(hex: 0xF9F9F9) : appColor.color)
                 .onAppear {
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + (viewModel.state == .empty ? 1 : 0.5)) {
                         withAnimation {
                             isSplashScreenFinished = true
                         }

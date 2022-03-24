@@ -31,9 +31,7 @@ class HealthStore {
             HKQuantityType(.distanceWheelchair),
         ])
         
-        Task {
-            try await hkHealthStore.requestAuthorization(toShare: .init(), read: types)
-        }
+        hkHealthStore.requestAuthorization(toShare: .init(), read: types) { _, _ in }
     }
     
     func entries(for date: Date) -> AnyPublisher<[HealthEntry], Never> {

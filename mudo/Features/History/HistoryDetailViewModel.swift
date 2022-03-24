@@ -16,6 +16,7 @@ class HistoryDetailViewModel: ObservableObject {
     @Published var healthEntries: [HealthEntry] = []
     @Published var workoutEntries: [WorkoutEntry] = []
     @Published var shouldShowEmptyState: Bool = false
+    @Published var shouldShowPermissionsPrompt: Bool = false
     
     private var subscriptions = Subscriptions()
     
@@ -23,20 +24,30 @@ class HistoryDetailViewModel: ObservableObject {
         self.entry = entry
         self.healthStore = healthStore
         
-        Publishers.CombineLatest($healthEntries, $workoutEntries)
-            .map { $0.isEmpty && $1.isEmpty }
+        let hasRequestedHealthPermissions = UserDefaults.standard.publisher(for: \.hasRequestedHealthPermissions)
+        Publishers.CombineLatest($healthEntries, $workoutEntries).combineLatest(hasRequestedHealthPermissions)
+            .map { $0.0.0.isEmpty && $0.0.1.isEmpty && $0.1}
             .receive(on: DispatchQueue.main)
             .assign(to: &$shouldShowEmptyState)
+        
+        hasRequestedHealthPermissions
+            .map { !$0 }
+            .receive(on: DispatchQueue.main)
+            .assign(to: &$shouldShowPermissionsPrompt)
     }
     
     func onAppear() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-            self.healthStore.requestPermissions()
+        let hasMadeUserInitiatedPermissionsRequest = UserDefaults.standard.hasRequestedHealthPermissions
+        if hasMadeUserInitiatedPermissionsRequest {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                self.healthStore.requestPermissions()
+            }
         }
         
         bindHealthStore()
         
-        Timer.publish(every: 5, on: .main, in: .default)
+        let interval: TimeInterval = hasMadeUserInitiatedPermissionsRequest ? 5 : 1
+        Timer.publish(every: interval, on: .main, in: .default)
             .autoconnect()
             .sink { [weak self] _ in self?.bindHealthStore() }
             .store(in: &subscriptions)
@@ -56,5 +67,22 @@ class HistoryDetailViewModel: ObservableObject {
         healthStore.workoutEntries(for: entry.date)
             .receive(on: DispatchQueue.main)
             .assign(to: &$workoutEntries)
+    }
+    
+    func requestInitialPermissions() {
+        healthStore.requestPermissions()
+        
+        // delay to let health permissions present
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            UserDefaults.standard.hasRequestedHealthPermissions = true
+        }
+    }
+}
+
+private extension UserDefaults {
+    
+    @objc var hasRequestedHealthPermissions: Bool {
+        get { bool(forKey: "hasRequestedHealthPermissions") }
+        set { set(newValue, forKey: "hasRequestedHealthPermissions") }
     }
 }
