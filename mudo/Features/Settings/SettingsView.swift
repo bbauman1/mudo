@@ -88,6 +88,12 @@ extension SettingsView {
             } label: {
                 Text("Delete history")
             }
+            
+            Button {
+                MoodStore().undoTodaysEntry()
+            } label: {
+                Text("Delete todays entry")
+            }
         }
         #else
         EmptyView()
@@ -96,7 +102,13 @@ extension SettingsView {
     
     private func makeRandomEntry() -> (mood: Mood, note: String) {
         let mood = Mood.allCases.randomElement()!
-        let note = ["scoop", "poop", "doop", "loop", "boop"].randomElement()!
+        let note = [
+            "Feelin great",
+            "Great weather we're havin",
+            "Solid workout",
+            "Big chillin",
+            "Not the best day today"
+        ].randomElement()!
         return (mood, note)
     }
 }
