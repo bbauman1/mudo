@@ -24,8 +24,10 @@ struct HistoryDetailView: View {
                     VStack(alignment: .leading, spacing: 4) {
                         Text("Workouts")
                             .font(.system(size: 22, weight: .semibold, design: .rounded))
-                        ForEach(viewModel.workoutEntries) {
-                            WorkoutCardView(entry: $0)
+                        VStack(spacing: 8) {
+                            ForEach(viewModel.workoutEntries) {
+                                WorkoutCardView(entry: $0)
+                            }
                         }
                     }
                 }
