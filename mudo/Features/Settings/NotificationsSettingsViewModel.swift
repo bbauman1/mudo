@@ -29,6 +29,7 @@ class NotificationsSettingsViewModel: ObservableObject {
     func setUpObservers() {
         $isNotificationsToggleOn
             .dropFirst()
+            .removeDuplicates()
             .sink { [self] isOn in
                 UserDefaults.standard.isNotificationsToggleOn = isOn
                 if isOn {
@@ -91,10 +92,13 @@ class NotificationsSettingsViewModel: ObservableObject {
                     isNotificationsToggleOn = false
                 }
             case .denied:
-                showNotificationSettingsAlert = true
-                isNotificationsToggleOn = false
+                DispatchQueue.main.async {
+                    self.showNotificationSettingsAlert = true
+                    self.isNotificationsToggleOn = false
+                }
+                
             case .ephemeral, .authorized, .provisional:
-                break
+                scheduleRecurringNotifications()
             @unknown default:
                 break
             }

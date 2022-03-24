@@ -37,6 +37,19 @@ struct SettingsView: View {
     var notificationsSection: some View {
         Section(header: Text("Notification settings")) {
             Toggle("Enable daily reminder", isOn: $notificationsViewModel.isNotificationsToggleOn)
+                .alert("Notification permissions are denied", isPresented: $notificationsViewModel.showNotificationSettingsAlert) {
+                    Button("Open Settings") {
+                        UIApplication.shared.open(
+                            URL(string: UIApplication.openSettingsURLString)!,
+                            options: [:],
+                            completionHandler: nil)
+                    }
+                    Button(role: .cancel) {
+                        
+                    } label: {
+                        Text("Cancel")
+                    }
+                }
             if notificationsViewModel.isNotificationsToggleOn {
                 DatePicker(
                     "Reminder time",

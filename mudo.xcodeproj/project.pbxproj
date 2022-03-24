@@ -278,6 +278,7 @@
 		A834CC322770F98300596EF8 /* Stores */ = {
 			isa = PBXGroup;
 			children = (
+				A8F3C13127C066CA00EB343B /* HealthStore.swift */,
 				A834CC332770F99600596EF8 /* MoodStore.swift */,
 			);
 			path = Stores;
@@ -323,7 +324,6 @@
 			children = (
 				A8BB624827B9A4AB00A158A7 /* HealthDataType.swift */,
 				A8BB624D27B9B01A00A158A7 /* HealthCardView.swift */,
-				A8F3C13127C066CA00EB343B /* HealthStore.swift */,
 				A8F3C13327C0672800EB343B /* HealthEntry.swift */,
 				A8F3C13D27C2C8B400EB343B /* WorkoutCardView.swift */,
 				A8F3C13F27C2CDD000EB343B /* WorkoutEntry.swift */,
