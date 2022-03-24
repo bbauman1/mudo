@@ -67,6 +67,8 @@ struct SettingsView: View {
     }
 }
 
+// MARK: Debug
+
 extension SettingsView {
     var debugSection: some View {
         #if DEBUG
