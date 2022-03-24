@@ -36,8 +36,10 @@ struct HistoryDetailView: View {
                             Text("Overall stats")
                                 .font(.system(size: 22, weight: .semibold, design: .rounded))
                         }
-                        ForEach(viewModel.healthEntries) {
-                            HealthCardView(dataType: $0.dataType, value: $0.value)
+                        VStack(spacing: 8) {
+                            ForEach(viewModel.healthEntries) {
+                                HealthCardView(dataType: $0.dataType, value: $0.value)
+                            }
                         }
                     }
                 }
@@ -81,7 +83,7 @@ struct HistoryDetailView: View {
     var healthPermissionsView: some View {
         VStack(alignment: .leading) {
             Text("No Apple Health data found for this day. Double check that your Apple Health permissions are enabled in Settings.")
-                .font(.system(.callout))
+                .font(.system(.callout, design: .rounded))
             HStack {
                 Spacer()
                 Button("Open Settings") {
