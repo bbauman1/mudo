@@ -69,6 +69,7 @@ struct SettingsView: View {
 
 extension SettingsView {
     var debugSection: some View {
+        #if DEBUG
         Section(header: Text("Debug")) {
             Button {
                 let store = MoodStore()
@@ -86,6 +87,9 @@ extension SettingsView {
                 Text("Delete history")
             }
         }
+        #else
+        EmptyView()
+        #endif
     }
     
     private func makeRandomEntry() -> (mood: Mood, note: String) {
