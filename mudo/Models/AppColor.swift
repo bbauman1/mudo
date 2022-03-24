@@ -10,21 +10,18 @@ import SwiftUI
 
 enum AppColor: String, CaseIterable, Codable {
     
-    // new
-    case wildBlueYonder // BLUE
-    case redSalsa // RED
-    case tuscany // PALE RED
-    
-    // old-temp
+    case wildBlueYonder
+    case cyan
+    case tuscany
+    case redSalsa
     case red
-    case green
+    case teal
     case blue
+    case green
     case pink
+    case mint
     case orange
     case yellow
-    case mint
-    case teal
-    case cyan
     case indigo
     case purple
     case brown

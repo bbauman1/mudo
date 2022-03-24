@@ -114,7 +114,7 @@ struct MoodEditorView: View {
             dismiss()
         } label: {
             Text("Save mood")
-                .font(.system(size: 16, weight: .semibold, design: .rounded))
+                .font(.system(size: 18, weight: .semibold, design: .rounded))
                 .frame(maxWidth: .infinity)
         }
         .buttonStyle(.borderedProminent)
@@ -183,6 +183,7 @@ struct MoodEditorView: View {
         } label: {
             Label {
                 Text(mood.displayName.lowercased())
+                    .font(.system(size: 18, weight: .semibold, design: .rounded))
             } icon: {
                 Text(mood.emoji)
                     .font(.system(size: 28))
