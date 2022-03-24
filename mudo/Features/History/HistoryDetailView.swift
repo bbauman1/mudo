@@ -84,15 +84,14 @@ struct HistoryDetailView: View {
     
     var healthPermissionsView: some View {
         VStack(alignment: .leading) {
-            Text("No Apple Health data found for this day. Double check that your Apple Health permissions are enabled in Settings.")
+            Text("No Apple Health data found for this day. Double check that your Apple Health permissions are enabled in the Health app. Health > Sharing tab > Apps > mudo")
                 .font(.system(.callout, design: .rounded))
             HStack {
                 Spacer()
-                Button("Open Settings") {
-                    UIApplication.shared.open(
-                        URL(string: UIApplication.openSettingsURLString)!,
-                        options: [:],
-                        completionHandler: nil)
+                Button("Open Health") {
+                    if let url = URL(string: "x-apple-health://sources") {
+                        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                    }
                 }
                 .buttonStyle(.borderedProminent)
                 .buttonBorderShape(.capsule)
