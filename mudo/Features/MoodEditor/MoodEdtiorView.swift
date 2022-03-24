@@ -26,12 +26,24 @@ struct MoodEditorView: View {
     
     var recordView: some View {
         VStack(spacing: 24) {
-            titleText
-            ScrollView(showsIndicators: false) {
-                wrappingMoodButtons
-                    .padding(.horizontal, 24)
+            ZStack {
+                VStack(spacing: 24) {
+                    titleText
+                    ScrollView(showsIndicators: false) {
+                        wrappingMoodButtons
+                            .padding(.horizontal, 24)
+                    }
+                    .padding(.horizontal, -24)
+                }
+                
+                if isNoteExpanded {
+                    Color.black.opacity(0.65)
+                        .padding([.horizontal, .top], -24)
+                        .onTapGesture {
+                            isNoteExpanded = false
+                        }
+                }
             }
-            .padding(.horizontal, -24)
             noteView
             submitButton
             scrollAnchor

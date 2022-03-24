@@ -8,71 +8,81 @@
 import Foundation
 
 enum Mood: CaseIterable, Codable {
-    case sleepy
-    case frantic
-    case empty
-    case up
-    case down
+    
+    // MARK: Positive
+    case happy
     case chillin
-    case woozy
-    case sick
-    case hungry
-    case disappointed
-    case redacted
-    case brain
-    case chains
+    case energized
     case graphUp
-    case graphDown
     case lucky
     case strong
-    case goofy
-    case reportingForDuty
-    case groovy
-    case fruity
-    case highEnergy
-    case royal
-    case nostalgic
-    case dead
-    case bump
-    case notSure
     case fire
+    case highEnergy
+    case brain
     case spiritual
-    case tropical
     case healthy
     case colorful
     case rocket
-    case clairvoyant
-    case melted
-    case loud
     case numberOne
     case inLove
-    case heartBroken
     case rich
+    case proud
+    
+    // MARK: Neutral
+    case notSure
+    case quiet
+    case melted
+    case hungry
+    case empty
+    case goofy
+    case reportingForDuty
+    case clairvoyant
+    case groovy
+    case fruity
+    case royal
+    case tropical
+    case nostalgic
+    case sloshed
+    case cool
+    case wildCard
+    case anxious
+    case tired
+    
+    // MARK: Negative
+    case frantic
+    case woozy
+    case sick
+    case disappointed
+    case redacted
+    case chains
+    case dead
+    case graphDown
+    case loud
+    case heartBroken
     case aggresive
     case shifty
-    case cool
     case strange
     case pain
-    case wildCard
     case frustrated
     case explosive
-    case energized
-    case happy
     case embarrased
-    case quiet
-    case proud
-    case tired
     case annoyed
     case sad
     case scared
     case angry
-    case anxious
+    
 
     static var displayCases: [Mood] {
-        let smileysAndPeople = allCases.filter { $0.moodType == .smileysAndPeople }
-        let other = allCases.filter { $0.moodType == .other }
+        if #available(iOS 15.4, *) {
+            return allCases
+        } else {
+            return allCases.filter { !$0.requiresFifteenPointFour }
+        }
         
-        return filterAndSort(smileysAndPeople) + filterAndSort(other)
+//        let smileysAndPeople = allCases.filter { $0.moodType == .smileysAndPeople }
+//        let other = allCases.filter { $0.moodType == .other }
+//
+//        return filterAndSort(smileysAndPeople) + filterAndSort(other)
     }
     
     private static func filterAndSort(_ moods: [Mood]) -> [Mood] {
@@ -120,16 +130,10 @@ extension Mood {
             return "Frustrated"
         case .anxious:
             return "Anxious"
-        case .sleepy:
-            return "Sleepy"
         case .frantic:
             return "Frantic"
         case .empty:
             return "Empty"
-        case .up:
-            return "Up"
-        case .down:
-            return "Down"
         case .chillin:
             return "Chillin"
         case .woozy:
@@ -139,9 +143,9 @@ extension Mood {
         case .disappointed:
             return "Disappointed"
         case .redacted:
-            return "Redacted"
+            return "&$!#%"
         case .brain:
-            return "Brain"
+            return "200 IQ"
         case .chains:
             return "Restricted"
         case .graphUp:
@@ -155,21 +159,19 @@ extension Mood {
         case .goofy:
             return "Goofy"
         case .reportingForDuty:
-            return "Reporting for duty"
+            return "Obedient"
         case .groovy:
             return "Groovy"
         case .fruity:
             return "Fruity"
         case .highEnergy:
-            return "High energy"
+            return "Activated"
         case .royal:
             return "Royal"
         case .nostalgic:
             return "Nostalgic"
         case .dead:
             return "Dead"
-        case .bump:
-            return "Bump"
         case .notSure:
             return "Not sure"
         case .fire:
@@ -187,7 +189,7 @@ extension Mood {
         case .clairvoyant:
             return "Clairvoyant"
         case .melted:
-            return "Melted"
+            return "Mixed"
         case .loud:
             return "Loud"
         case .numberOne:
@@ -212,6 +214,8 @@ extension Mood {
             return "Wildcard"
         case .explosive:
             return "Explosive"
+        case .sloshed:
+            return "Sloshed"
         }
     }
 
@@ -240,19 +244,13 @@ extension Mood {
         case .angry:
             return "😡"
         case .sick:
-            return "😷"
+            return "🤒"
         case .frustrated:
             return "😣"
-        case .sleepy:
-            return "😴"
         case .frantic:
             return "😵‍💫"
         case .empty:
             return "🫥"
-        case .up:
-            return "👍"
-        case .down:
-            return "👎"
         case .chillin:
             return "🤙"
         case .woozy:
@@ -291,8 +289,6 @@ extension Mood {
             return "💾"
         case .dead:
             return "🧟"
-        case .bump:
-            return "👊"
         case .notSure:
             return "🤷"
         case .fire:
@@ -335,6 +331,8 @@ extension Mood {
             return "🃏"
         case .explosive:
             return "💣"
+        case .sloshed:
+            return "😳"
         }
     }
 
